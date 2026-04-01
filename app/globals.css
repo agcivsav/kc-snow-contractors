@@ -3,25 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-yellow: #F5A623;
+  --brand-dark: #1A1A1A;
+  --brand-gray: #4A4A4A;
+  --brand-light: #F8F8F8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-gray-900;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-md transition-colors duration-200 text-sm uppercase tracking-wide;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-black font-bold rounded-md transition-colors duration-200 text-sm uppercase tracking-wide;
+  }
+  .section-heading {
+    @apply text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight;
+  }
+  .section-subheading {
+    @apply text-lg text-gray-600 mt-3 max-w-2xl;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-200;
+  }
+  .stat-box {
+    @apply text-center p-4;
+  }
+  .stat-number {
+    @apply text-4xl font-extrabold text-yellow-500;
+  }
+  .stat-label {
+    @apply text-sm text-gray-500 mt-1 uppercase tracking-wider;
   }
 }

@@ -1,0 +1,58 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Spring Equipment Rental Kansas City | KC Snow Contractors',
+  description: 'Rent wheel loaders and skid steers in Kansas City this spring. Grading, landscaping, topsoil, site prep. Long-term spring rates available. CASE equipment maintained and ready.',
+};
+
+export default function SpringRentalPage() {
+  return (
+    <>
+      <section className="bg-gray-900 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center bg-green-500 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
+              🌱 Spring Season
+            </div>
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+              Spring Equipment Rental<br />
+              <span className="text-yellow-400">Kansas City</span>
+            </h1>
+            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+              When the snow melts, the real work begins. Rent CASE wheel loaders and skid steers
+              this spring for grading, landscaping, topsoil work, and site cleanup across the KC metro.
+            </p>
+            <Link href="/quote" className="btn-primary">Get Spring Pricing</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-heading mb-8">Top Spring Rental Uses</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+            {[
+              'Lot grading and leveling after winter freeze damage',
+              'Topsoil spreading for lawn installation',
+              'Mulch and landscape material placement',
+              'Stormwater drainage excavation',
+              'Construction site startup — clearing and prep',
+              'Hardscape base preparation',
+            ].map((use) => (
+              <div key={use} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-100">
+                <span className="text-yellow-500 font-bold mt-0.5">✓</span>
+                <span className="text-sm text-gray-700">{use}</span>
+              </div>
+            ))}
+          </div>
+          <div className="bg-gray-900 text-white rounded-2xl p-8 text-center">
+            <h2 className="text-2xl font-extrabold mb-3">Book Spring Availability Now</h2>
+            <p className="text-gray-400 mb-6">Spring machines book fast. Get a quote to lock in your dates.</p>
+            <Link href="/quote" className="btn-primary">Request a Quote</Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
