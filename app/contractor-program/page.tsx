@@ -6,11 +6,36 @@ export const metadata: Metadata = {
   description: 'Dedicated contractor rental program in Kansas City. Multi-unit discounts, priority availability, Net-30 billing, and dedicated account management for landscapers, snow companies, and general contractors.',
 };
 
+const benefits = [
+  { title: 'Multi-Unit Discounts', desc: 'Renting more than one machine at a time? Volume pricing kicks in automatically for contractor accounts.' },
+  { title: 'Priority Availability', desc: 'During peak snow season, contractor accounts get first call on machines. No scrambling when the storm hits.' },
+  { title: 'Net-30 Billing', desc: 'Qualified contractor accounts can invoice and pay Net-30. Better cash flow management for your business.' },
+  { title: 'Dedicated Account Manager', desc: 'One point of contact for every rental. No call queues, no starting over with a new rep every time.' },
+  { title: 'Recurring Rental Setup', desc: 'Run the same job every year? We can pre-book machines for your seasonal schedule automatically.' },
+  { title: 'Attachment Packages', desc: 'Contractor accounts get access to full attachment packages — snow blowers, augers, forks, and more — at preferred rates.' },
+];
+
+const audiences = [
+  { title: 'Snow Removal Companies', desc: 'Multi-site operators who need reliable fleet backup or supplemental equipment during heavy snow events.' },
+  { title: 'Landscaping Contractors', desc: 'Spring through fall — grading, topsoil, hardscape, planting. Year-round off-season rates make projects profitable.' },
+  { title: 'General Contractors', desc: 'Site prep, demolition, backfill — ongoing needs throughout the build season. Keep machines on site without ownership overhead.' },
+  { title: 'Property Management Companies', desc: 'Managing multiple properties means unpredictable equipment needs. We flex with you.' },
+];
+
 export default function ContractorProgramPage() {
   return (
     <>
-      <section className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gray-900 text-white overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&q=80&auto=format&fit=crop")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.25,
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
             <div className="inline-flex items-center bg-yellow-500 text-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
               For Contractors
@@ -32,16 +57,8 @@ export default function ContractorProgramPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-heading text-center mb-12">What You Get as a Contractor Account</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { icon: '💰', title: 'Multi-Unit Discounts', desc: 'Renting more than one machine at a time? Volume pricing kicks in automatically for contractor accounts.' },
-              { icon: '⚡', title: 'Priority Availability', desc: 'During peak snow season, contractor accounts get first call on machines. No scrambling when the storm hits.' },
-              { icon: '📋', title: 'Net-30 Billing', desc: 'Qualified contractor accounts can invoice and pay Net-30. Better cash flow management for your business.' },
-              { icon: '📞', title: 'Dedicated Account Manager', desc: 'One point of contact for every rental. No call queues, no starting over with a new rep every time.' },
-              { icon: '📅', title: 'Recurring Rental Setup', desc: 'Run the same job every year? We can pre-book machines for your seasonal schedule automatically.' },
-              { icon: '🔧', title: 'Attachment Packages', desc: 'Contractor accounts get access to full attachment packages — snow blowers, augers, forks, and more — at preferred rates.' },
-            ].map((b) => (
-              <div key={b.title} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <div className="text-3xl mb-3">{b.icon}</div>
+            {benefits.map((b) => (
+              <div key={b.title} className="bg-gray-50 rounded-xl p-6 border border-gray-100 border-l-4 border-l-yellow-400">
                 <h3 className="font-bold text-gray-900 mb-2">{b.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{b.desc}</p>
               </div>
@@ -53,20 +70,14 @@ export default function ContractorProgramPage() {
       {/* Who It's For */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-2xl font-extrabold text-gray-900 mb-6">Who the Program Is Built For</h2>
               <div className="space-y-4">
-                {[
-                  { title: '❄️ Snow Removal Companies', desc: 'Multi-site operators who need reliable fleet backup or supplemental equipment during heavy snow events.' },
-                  { title: '🌱 Landscaping Contractors', desc: 'Spring through fall — grading, topsoil, hardscape, planting. Year-round off-season rates make projects profitable.' },
-                  { title: '🏗️ General Contractors', desc: 'Site prep, demolition, backfill — ongoing needs throughout the build season. Keep machines on site without ownership overhead.' },
-                  { title: '🏢 Property Management Companies', desc: 'Managing multiple properties means unpredictable equipment needs. We flex with you.' },
-                ].map((a) => (
+                {audiences.map((a) => (
                   <div key={a.title} className="flex gap-4 p-4 bg-white rounded-lg border border-gray-100">
-                    <div className="text-xl mt-0.5">{a.title.split(' ')[0]}</div>
                     <div>
-                      <div className="font-semibold text-gray-900 text-sm">{a.title.slice(2)}</div>
+                      <div className="font-semibold text-gray-900 text-sm">{a.title}</div>
                       <div className="text-gray-600 text-sm mt-0.5">{a.desc}</div>
                     </div>
                   </div>

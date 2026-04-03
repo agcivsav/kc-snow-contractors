@@ -22,46 +22,43 @@ const specs = [
   { label: 'Hydraulic Flow', value: 'Standard & High-Flow available' },
 ];
 
+const applications = [
+  { title: 'Snow Removal', desc: 'Articulated steering handles tight lot turns. Fast road speed means more lots per shift.' },
+  { title: 'Site Preparation', desc: 'Powerful breakout force for grading, backfilling, and moving heavy aggregate.' },
+  { title: 'Material Handling', desc: '1.3–1.7 yd³ bucket capacity. Handles mulch, gravel, topsoil, and fill material.' },
+  { title: 'Landscaping', desc: 'Precise hydrostatic controls for finish grading and landscape installation.' },
+  { title: 'Construction Support', desc: 'Multi-month rentals available — ideal for phased construction projects.' },
+];
+
 export default function WheelLoaderPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
-            <Link href="/" className="hover:text-yellow-400">Home</Link>
-            <span>/</span>
-            <span>Equipment</span>
-            <span>/</span>
-            <span className="text-white">CASE 321F Wheel Loader</span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
+      <section className="bg-gray-900 text-white py-0 overflow-hidden">
+        <div className="relative h-80 md:h-96">
+          <img
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1400&q=80&auto=format&fit=crop"
+            alt="CASE 321F Compact Wheel Loader"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                <Link href="/" className="hover:text-yellow-400">Home</Link>
+                <span>/</span>
+                <span>Equipment</span>
+                <span>/</span>
+                <span className="text-white">CASE 321F Wheel Loader</span>
+              </div>
               <div className="inline-flex items-center bg-yellow-500 text-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
                 Available Now
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+              <h1 className="text-4xl md:text-5xl font-extrabold mb-3">
                 CASE 321F<br />
                 <span className="text-yellow-400">Compact Wheel Loader</span>
               </h1>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                74 HP of articulated power. Hydrostatic transmission for smooth, operator-friendly
-                operation. At 25 mph, it gets between job zones fast. The right machine for snow
-                removal, grading, and heavy material handling.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/quote" className="btn-primary">Request a Quote</Link>
-                <Link href="/rent-wheel-loader-kansas-city" className="btn-secondary text-sm">
-                  Rental Info
-                </Link>
-              </div>
-            </div>
-            <div className="bg-gray-800 rounded-2xl h-72 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-8xl mb-3">🚜</div>
-                <div className="text-white font-bold">CASE 321F</div>
-                <div className="text-yellow-400 text-sm">74 HP · 13,633 lb · 25 mph</div>
-              </div>
+              <p className="text-gray-300 max-w-xl">74 HP — 25 mph — Hydrostatic transmission — 13,633 lb</p>
             </div>
           </div>
         </div>
@@ -86,24 +83,17 @@ export default function WheelLoaderPage() {
         </div>
       </section>
 
-      {/* Applications */}
+      {/* Applications + Specs */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-2xl font-extrabold text-gray-900 mb-6">What It's Used For</h2>
-              <div className="space-y-4">
-                {[
-                  { title: '❄️ Snow Removal', desc: 'Articulated steering handles tight lot turns. Fast road speed means more lots per shift.' },
-                  { title: '🏗️ Site Preparation', desc: 'Powerful breakout force for grading, backfilling, and moving heavy aggregate.' },
-                  { title: '📦 Material Handling', desc: '1.3–1.7 yd³ bucket capacity. Handles mulch, gravel, topsoil, and fill material.' },
-                  { title: '🏡 Landscaping', desc: 'Precise hydrostatic controls for finish grading and landscape installation.' },
-                  { title: '🏢 Construction Support', desc: 'Multi-month rentals available — ideal for phased construction projects.' },
-                ].map((a) => (
-                  <div key={a.title} className="flex gap-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="text-xl mt-0.5">{a.title.split(' ')[0]}</div>
+              <div className="space-y-3">
+                {applications.map((a) => (
+                  <div key={a.title} className="flex gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-yellow-400">
                     <div>
-                      <div className="font-semibold text-gray-900 text-sm">{a.title.slice(2)}</div>
+                      <div className="font-semibold text-gray-900 text-sm">{a.title}</div>
                       <div className="text-gray-600 text-sm mt-0.5">{a.desc}</div>
                     </div>
                   </div>
@@ -111,7 +101,6 @@ export default function WheelLoaderPage() {
               </div>
             </div>
 
-            {/* Full Spec Sheet */}
             <div>
               <h2 className="text-2xl font-extrabold text-gray-900 mb-6">Full Specifications</h2>
               <div className="border border-gray-200 rounded-xl overflow-hidden">

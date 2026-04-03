@@ -28,7 +28,9 @@ export default function ContactPage() {
               <h2 className="text-2xl font-extrabold text-gray-900 mb-6">Get in Touch</h2>
               {sent ? (
                 <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
-                  <div className="text-4xl mb-3">✅</div>
+                  <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
                   <h3 className="font-bold text-gray-900 mb-2">Message Sent</h3>
                   <p className="text-gray-600 text-sm">We'll get back to you shortly.</p>
                 </div>
@@ -64,11 +66,11 @@ export default function ContactPage() {
                 <h3 className="font-bold text-gray-900 mb-4">KC Snow Contractors</h3>
                 <div className="space-y-3 text-sm text-gray-600">
                   <div className="flex items-center gap-3">
-                    <span className="text-yellow-500">📍</span>
+                    <span className="font-bold text-yellow-500 text-xs uppercase">Location</span>
                     <span>Kansas City, Missouri</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-yellow-500">🌐</span>
+                    <span className="font-bold text-yellow-500 text-xs uppercase">Area</span>
                     <span>Serving the KC metro area</span>
                   </div>
                 </div>

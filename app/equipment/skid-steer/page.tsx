@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Rent CASE SV280B Skid Steer Loader | Kansas City',
   description:
-    'Rent the CASE SV280B Skid Steer Loader in Kansas City. Vertical lift, high-flow hydraulics, universal attachment compatibility. Perfect for snow relocation, site work, and landscaping.',
+    'Rent the CASE SV280B Skid Steer Loader in Kansas City. Vertical lift, high-flow hydraulics, 2,800 lb rated capacity. Perfect for snow relocation, site work, and landscaping.',
 };
 
 const specs = [
@@ -22,46 +22,43 @@ const specs = [
   { label: 'Fuel Tank', value: '26.4 gal (100 L)' },
 ];
 
+const applications = [
+  { title: 'Snow Relocation', desc: 'Vertical lift gives max reach into snow trucks. High-flow runs snow blower attachments hard.' },
+  { title: 'Landscaping', desc: 'Grade, spread topsoil, install sod. Tight turning radius handles residential and commercial sites.' },
+  { title: 'Site Demolition', desc: 'Bucket, hydraulic breaker, or auger — swap attachments in minutes.' },
+  { title: 'Loading & Moving', desc: 'At 2,800 lb rated capacity, this machine handles heavy aggregate loads all day.' },
+  { title: 'Utility Work', desc: 'Trench digging, backfilling, material stockpiling — versatile for utility and infrastructure jobs.' },
+];
+
 export default function SkidSteerPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
-            <Link href="/" className="hover:text-yellow-400">Home</Link>
-            <span>/</span>
-            <span>Equipment</span>
-            <span>/</span>
-            <span className="text-white">CASE SV280B Skid Steer</span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
+      <section className="bg-gray-900 text-white py-0 overflow-hidden">
+        <div className="relative h-80 md:h-96">
+          <img
+            src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=1400&q=80&auto=format&fit=crop"
+            alt="CASE SV280B Skid Steer Loader"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                <Link href="/" className="hover:text-yellow-400">Home</Link>
+                <span>/</span>
+                <span>Equipment</span>
+                <span>/</span>
+                <span className="text-white">CASE SV280B Skid Steer</span>
+              </div>
               <div className="inline-flex items-center bg-yellow-500 text-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
                 Available Now
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+              <h1 className="text-4xl md:text-5xl font-extrabold mb-3">
                 CASE SV280B<br />
                 <span className="text-yellow-400">Skid Steer Loader</span>
               </h1>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                2,800 lb rated capacity. Vertical lift design for maximum reach at full height.
-                High-flow hydraulics power everything from snow blowers to augers. Universal
-                quick-attach makes swapping tools fast.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/quote" className="btn-primary">Request a Quote</Link>
-                <Link href="/rent-skid-steer-kansas-city" className="btn-secondary text-sm">
-                  Rental Info
-                </Link>
-              </div>
-            </div>
-            <div className="bg-gray-800 rounded-2xl h-72 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-8xl mb-3">🏗️</div>
-                <div className="text-white font-bold">CASE SV280B</div>
-                <div className="text-yellow-400 text-sm">90 HP · 2,800 lb ROC · Vertical Lift</div>
-              </div>
+              <p className="text-gray-300 max-w-xl">90 HP — 2,800 lb Rated Capacity — Vertical Lift — High-Flow Hydraulics</p>
             </div>
           </div>
         </div>
@@ -92,18 +89,11 @@ export default function SkidSteerPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-2xl font-extrabold text-gray-900 mb-6">What It's Used For</h2>
-              <div className="space-y-4">
-                {[
-                  { title: '❄️ Snow Relocation', desc: 'Vertical lift gives max reach into snow trucks. High-flow runs snow blower attachments hard.' },
-                  { title: '🌱 Landscaping', desc: 'Grade, spread topsoil, install sod. Tight turning radius handles residential and commercial sites.' },
-                  { title: '🏗️ Site Demolition', desc: 'Bucket, hydraulic breaker, or auger — swap attachments in minutes.' },
-                  { title: '📦 Loading & Moving', desc: 'At 2,800 lb rated capacity, this machine handles heavy aggregate loads all day.' },
-                  { title: '🚿 Utility Work', desc: 'Trench digging, backfilling, material stockpiling — versatile for utility and infrastructure jobs.' },
-                ].map((a) => (
-                  <div key={a.title} className="flex gap-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="text-xl mt-0.5">{a.title.split(' ')[0]}</div>
+              <div className="space-y-3">
+                {applications.map((a) => (
+                  <div key={a.title} className="flex gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-yellow-400">
                     <div>
-                      <div className="font-semibold text-gray-900 text-sm">{a.title.slice(2)}</div>
+                      <div className="font-semibold text-gray-900 text-sm">{a.title}</div>
                       <div className="text-gray-600 text-sm mt-0.5">{a.desc}</div>
                     </div>
                   </div>

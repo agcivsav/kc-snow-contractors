@@ -9,11 +9,20 @@ export const metadata: Metadata = {
 export default function SpringRentalPage() {
   return (
     <>
-      <section className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gray-900 text-white overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=80&auto=format&fit=crop")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.25,
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center bg-green-500 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
-              🌱 Spring Season
+            <div className="inline-flex items-center bg-green-600 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
+              Spring Season
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
               Spring Equipment Rental<br />
@@ -36,12 +45,12 @@ export default function SpringRentalPage() {
               'Lot grading and leveling after winter freeze damage',
               'Topsoil spreading for lawn installation',
               'Mulch and landscape material placement',
-              'Stormwater drainage excavation',
+              'Stormwater and drainage system work',
               'Construction site startup — clearing and prep',
               'Hardscape base preparation',
             ].map((use) => (
               <div key={use} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-100">
-                <span className="text-yellow-500 font-bold mt-0.5">✓</span>
+                <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-1.5 shrink-0" />
                 <span className="text-sm text-gray-700">{use}</span>
               </div>
             ))}

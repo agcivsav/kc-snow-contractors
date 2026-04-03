@@ -25,7 +25,9 @@ export default function QuotePage() {
     return (
       <section className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
         <div className="bg-white rounded-2xl shadow-md p-10 max-w-lg w-full text-center">
-          <div className="text-5xl mb-4">✅</div>
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                </div>
           <h1 className="text-2xl font-extrabold text-gray-900 mb-3">Quote Request Received</h1>
           <p className="text-gray-600 mb-6">We'll get back to you same day (usually within the hour during business hours). We'll confirm availability and send over pricing.</p>
           <Link href="/" className="btn-primary text-sm">Back to Home</Link>
@@ -153,7 +155,7 @@ export default function QuotePage() {
                 <ul className="space-y-2 text-sm text-gray-600">
                   {['Availability confirmation', 'Daily / weekly / monthly pricing', 'Delivery cost estimate', 'Equipment specs & fit assessment'].map((i) => (
                     <li key={i} className="flex items-center gap-2">
-                      <span className="text-yellow-500">✓</span>{i}
+                      <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full shrink-0 inline-block mt-1" />{i}
                     </li>
                   ))}
                 </ul>

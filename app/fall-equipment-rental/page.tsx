@@ -9,11 +9,20 @@ export const metadata: Metadata = {
 export default function FallRentalPage() {
   return (
     <>
-      <section className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gray-900 text-white overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&q=80&auto=format&fit=crop")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.25,
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
             <div className="inline-flex items-center bg-amber-700 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
-              🍂 Fall Season
+              Fall Season
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
               Fall Equipment Rental<br />
@@ -22,7 +31,6 @@ export default function FallRentalPage() {
             <p className="text-gray-300 text-lg mb-8 leading-relaxed">
               Fall is the last window before winter locks everything down. Finish your grading,
               clear your lots, and wrap up site work before the snow season starts.
-              Equipment available now.
             </p>
             <Link href="/quote" className="btn-primary">Check Fall Availability</Link>
           </div>
@@ -31,11 +39,11 @@ export default function FallRentalPage() {
 
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="section-heading mb-8">Fall Is the Prep Season</h2>
+          <h2 className="section-heading mb-6">Fall Is the Prep Season</h2>
           <p className="text-gray-600 mb-8 leading-relaxed">
             Smart contractors use fall rentals to get ahead of winter. Final grading and drainage
             work prevents freeze-thaw damage. Lot clearing before snow season means you're ready
-            to start plowing immediately. Don't wait until December to prep.
+            to start plowing immediately.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
             {[
@@ -44,17 +52,17 @@ export default function FallRentalPage() {
               'Leaf, debris, and brush clearing',
               'Utility and trench work before ground freeze',
               'Stockpile and material storage prep',
-              'Pre-snow-season equipment familiarity for operators',
+              'Pre-season equipment familiarization for operators',
             ].map((use) => (
               <div key={use} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-100">
-                <span className="text-yellow-500 font-bold mt-0.5">✓</span>
+                <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-1.5 shrink-0" />
                 <span className="text-sm text-gray-700">{use}</span>
               </div>
             ))}
           </div>
           <div className="bg-gray-900 text-white rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-extrabold mb-3">Get a Fall Quote</h2>
-            <p className="text-gray-400 mb-6">Fall availability books fast — especially heading into snow season. Reserve your dates now.</p>
+            <p className="text-gray-400 mb-6">Fall availability books fast heading into snow season. Reserve your dates now.</p>
             <Link href="/quote" className="btn-primary">Request a Quote</Link>
           </div>
         </div>

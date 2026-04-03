@@ -13,8 +13,13 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative bg-gray-900 text-white overflow-hidden">
         <div
-          className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1600&q=80")', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&auto=format&fit=crop")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.35,
+          }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
           <div className="max-w-3xl">
@@ -72,10 +77,14 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* 321F */}
             <div className="card group">
-              <div className="bg-gray-800 h-56 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900" />
-                <div className="relative text-center">
-                  <div className="text-6xl mb-2">🚜</div>
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80&auto=format&fit=crop"
+                  alt="CASE 321F Compact Wheel Loader"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute bottom-4 left-4">
                   <div className="text-white font-bold text-lg">CASE 321F</div>
                   <div className="text-yellow-400 text-sm">Compact Wheel Loader</div>
                 </div>
@@ -83,7 +92,7 @@ export default function HomePage() {
               <div className="p-6">
                 <h3 className="text-xl font-extrabold text-gray-900 mb-2">CASE 321F Compact Wheel Loader</h3>
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  74 hp | 25 mph top speed | Hydrostatic transmission | 13,633 lb operating weight.
+                  74 hp — 25 mph top speed — Hydrostatic transmission — 13,633 lb operating weight.
                   Built for productivity in tight spaces — snow, grading, and material handling.
                 </p>
                 <div className="grid grid-cols-3 gap-3 mb-5">
@@ -106,10 +115,14 @@ export default function HomePage() {
 
             {/* SV280B */}
             <div className="card group">
-              <div className="bg-gray-800 h-56 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900" />
-                <div className="relative text-center">
-                  <div className="text-6xl mb-2">🏗️</div>
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=800&q=80&auto=format&fit=crop"
+                  alt="CASE SV280B Skid Steer Loader"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute bottom-4 left-4">
                   <div className="text-white font-bold text-lg">CASE SV280B</div>
                   <div className="text-yellow-400 text-sm">Skid Steer Loader</div>
                 </div>
@@ -117,7 +130,7 @@ export default function HomePage() {
               <div className="p-6">
                 <h3 className="text-xl font-extrabold text-gray-900 mb-2">CASE SV280B Skid Steer Loader</h3>
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  Vertical lift design | High-flow hydraulics | All-around visibility | Versatile attachment compatibility.
+                  Vertical lift design — High-flow hydraulics — All-around visibility — Universal attachment compatibility.
                   The go-to machine for snow relocation, site prep, and landscaping.
                 </p>
                 <div className="grid grid-cols-3 gap-3 mb-5">
@@ -160,17 +173,14 @@ export default function HomePage() {
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  { season: '🌱 Spring', use: 'Site grading, topsoil, landscaping, cleanup' },
-                  { season: '☀️ Summer', use: 'Construction, excavation, multi-month projects' },
-                  { season: '🍂 Fall', use: 'Prep work, lot clearing, stormwater management' },
-                  { season: '❄️ Winter', use: 'Snow removal, ice management, plowing' },
+                  { season: 'Spring', use: 'Site grading, topsoil, landscaping, cleanup' },
+                  { season: 'Summer', use: 'Construction, excavation, multi-month projects' },
+                  { season: 'Fall', use: 'Prep work, lot clearing, stormwater management' },
+                  { season: 'Winter', use: 'Snow removal, ice management, plowing' },
                 ].map((s) => (
                   <li key={s.season} className="flex items-start gap-3">
-                    <span className="text-lg mt-0.5">{s.season.split(' ')[0]}</span>
-                    <div>
-                      <span className="font-semibold text-gray-900">{s.season.slice(2)}</span>
-                      <span className="text-gray-600 text-sm"> — {s.use}</span>
-                    </div>
+                    <span className="inline-block bg-yellow-500 text-black text-xs font-bold px-2 py-0.5 rounded mt-0.5 w-14 text-center shrink-0">{s.season}</span>
+                    <span className="text-gray-600 text-sm">{s.use}</span>
                   </li>
                 ))}
               </ul>
@@ -180,13 +190,12 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { title: 'Long-Term Rates', desc: 'Monthly pricing that makes off-season projects economical', icon: '📅' },
-                { title: 'Large Fleet', desc: 'High availability — rarely a waitlist even in peak season', icon: '🚛' },
-                { title: 'KC-Based', desc: 'Local company, local support, no out-of-town logistics delays', icon: '📍' },
-                { title: 'Contractor Preferred', desc: 'Multi-unit discounts and dedicated contractor accounts', icon: '🤝' },
+                { title: 'Long-Term Rates', desc: 'Monthly pricing that makes off-season projects economical' },
+                { title: 'Large Fleet', desc: 'High availability — rarely a waitlist even in peak season' },
+                { title: 'KC-Based', desc: 'Local company, local support, no out-of-town logistics delays' },
+                { title: 'Contractor Preferred', desc: 'Multi-unit discounts and dedicated contractor accounts' },
               ].map((f) => (
                 <div key={f.title} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
-                  <div className="text-3xl mb-3">{f.icon}</div>
                   <h4 className="font-bold text-gray-900 text-sm mb-1">{f.title}</h4>
                   <p className="text-gray-500 text-xs leading-relaxed">{f.desc}</p>
                 </div>
@@ -208,7 +217,6 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Direct Renters */}
             <div className="border-2 border-yellow-400 rounded-xl p-8">
-              <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-2xl font-extrabold text-gray-900 mb-3">Direct Renters</h3>
               <p className="text-gray-600 mb-5 leading-relaxed">
                 Property owners, farmers, small businesses — anyone who needs a machine and wants to
@@ -222,7 +230,7 @@ export default function HomePage() {
                   'Operator coaching available',
                 ].map((i) => (
                   <li key={i} className="flex items-center gap-2">
-                    <span className="text-yellow-500 font-bold">✓</span> {i}
+                    <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full shrink-0" /> {i}
                   </li>
                 ))}
               </ul>
@@ -233,7 +241,6 @@ export default function HomePage() {
 
             {/* Contractors */}
             <div className="border-2 border-gray-800 rounded-xl p-8 bg-gray-900 text-white">
-              <div className="text-4xl mb-4">👷</div>
               <h3 className="text-2xl font-extrabold mb-3">Contractors</h3>
               <p className="text-gray-300 mb-5 leading-relaxed">
                 Landscapers, snow removal companies, general contractors — partner with us
@@ -247,12 +254,12 @@ export default function HomePage() {
                   'Dedicated account manager',
                 ].map((i) => (
                   <li key={i} className="flex items-center gap-2">
-                    <span className="text-yellow-400 font-bold">✓</span> {i}
+                    <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full shrink-0" /> {i}
                   </li>
                 ))}
               </ul>
               <Link href="/contractor-program" className="btn-secondary text-xs">
-                Contractor Program →
+                Contractor Program
               </Link>
             </div>
           </div>
@@ -268,10 +275,10 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              { step: '01', title: 'Request a Quote', desc: 'Tell us what machine, how long, and your job site. We\'ll respond same day.' },
+              { step: '01', title: 'Request a Quote', desc: 'Tell us what machine, how long, and your job site. We respond same day.' },
               { step: '02', title: 'Confirm & Book', desc: 'We lock in your dates and confirm availability. No surprise fees.' },
               { step: '03', title: 'Delivery or Pickup', desc: 'We deliver to your site or you pick up from our yard. Your call.' },
-              { step: '04', title: 'Get to Work', desc: 'Machine arrives ready to run. Return when done. That\'s it.' },
+              { step: '04', title: 'Get to Work', desc: 'Machine arrives ready to run. Return when done.' },
             ].map((s) => (
               <div key={s.step} className="text-center">
                 <div className="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -284,15 +291,24 @@ export default function HomePage() {
           </div>
           <div className="text-center mt-10">
             <Link href="/how-it-works" className="text-yellow-600 font-semibold text-sm hover:underline">
-              Full rental process details →
+              Full rental process details
             </Link>
           </div>
         </div>
       </section>
 
       {/* CTA BANNER */}
-      <section className="bg-gray-900 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative bg-gray-900 py-20 overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1542621334-a254cf47733d?w=1600&q=80&auto=format&fit=crop")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.2,
+          }}
+        />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
             Ready to Rent? Let's Talk.
           </h2>

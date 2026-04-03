@@ -6,11 +6,27 @@ export const metadata: Metadata = {
   description: 'Rent heavy equipment in Kansas City year-round — not just winter. Long-term off-season rates on CASE wheel loaders and skid steers. Spring, summer, fall availability.',
 };
 
+const seasons = [
+  { season: 'Spring', jobs: ['Site grading and leveling', 'Topsoil and mulch placement', 'Drainage and stormwater prep', 'Landscape installation', 'Lot cleanup and clearing'] },
+  { season: 'Summer', jobs: ['Construction site support', 'Concrete and masonry work', 'Multi-month project phases', 'Agricultural material handling', 'Road base and aggregate work'] },
+  { season: 'Fall', jobs: ['Pre-winter site prep', 'Leaf and debris cleanup', 'Final grading before frost', 'Utility and trench work', 'Stockpile and storage prep'] },
+  { season: 'Winter', jobs: ['Commercial lot snow removal', 'Municipal snow management', 'Parking structure clearing', 'Multi-site contractor fleets', 'Emergency storm response'] },
+];
+
 export default function OffSeasonPage() {
   return (
     <>
-      <section className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gray-900 text-white overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.25,
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
             <div className="inline-flex items-center bg-yellow-500 text-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
               Year-Round Rentals
@@ -33,18 +49,13 @@ export default function OffSeasonPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-heading mb-10 text-center">What You Can Do Off-Season</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {[
-              { season: '🌱 Spring', jobs: ['Site grading and leveling', 'Topsoil and mulch placement', 'Drainage and stormwater prep', 'Landscape installation', 'Lot cleanup and clearing'] },
-              { season: '☀️ Summer', jobs: ['Construction site support', 'Concrete and masonry work', 'Multi-month project phases', 'Agricultural material handling', 'Road base and aggregate work'] },
-              { season: '🍂 Fall', jobs: ['Pre-winter site prep', 'Leaf and debris cleanup', 'Final grading before frost', 'Utility and trench work', 'Stockpile and storage prep'] },
-              { season: '❄️ Winter', jobs: ['Commercial lot snow removal', 'Municipal snow management', 'Parking structure clearing', 'Multi-site contractor fleets', 'Emergency storm response'] },
-            ].map((s) => (
+            {seasons.map((s) => (
               <div key={s.season} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <h3 className="font-bold text-gray-900 mb-3 text-lg">{s.season}</h3>
-                <ul className="space-y-1">
+                <h3 className="font-bold text-gray-900 mb-3 text-lg border-b border-gray-200 pb-2">{s.season}</h3>
+                <ul className="space-y-1 mt-3">
                   {s.jobs.map((j) => (
                     <li key={j} className="text-sm text-gray-600 flex items-center gap-2">
-                      <span className="text-yellow-500">→</span> {j}
+                      <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full shrink-0" /> {j}
                     </li>
                   ))}
                 </ul>
