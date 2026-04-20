@@ -20,12 +20,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-yellow-500 rounded flex items-center justify-center">
-              <span className="text-black font-extrabold text-sm">KC</span>
+            <div className="w-12 h-8 bg-yellow-500 rounded flex items-center justify-center">
+              <span className="text-black font-extrabold text-sm">RPM</span>
             </div>
             <div>
-              <div className="font-extrabold text-base leading-tight">KC Snow Contractors</div>
-              <div className="text-xs text-yellow-400 leading-tight">Equipment Rental</div>
+              <div className="font-extrabold text-base leading-tight">RPM Equipment Leasing</div>
+              <div className="text-xs text-yellow-400 leading-tight">Equipment Leasing</div>
             </div>
           </Link>
 

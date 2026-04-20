@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'KC Snow Contractors | Heavy Equipment Rental – Kansas City',
-    template: '%s | KC Snow Contractors',
+    default: 'RPM Equipment Leasing | Heavy Equipment Rental – Kansas City',
+    template: '%s | RPM Equipment Leasing',
   },
   description:
     "Kansas City's leading heavy equipment rental company. CASE 321F wheel loaders and CASE SV280B skid steers available for snow removal, construction, and off-season projects. Call for daily, weekly, and long-term rates.",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'KC Snow Contractors',
+    siteName: 'RPM Equipment Leasing',
   },
 };
 

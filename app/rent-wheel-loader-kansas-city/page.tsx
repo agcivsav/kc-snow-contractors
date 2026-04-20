@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Rent a Wheel Loader in Kansas City | CASE 321F | KC Snow Contractors',
-  description: 'Rent a CASE 321F compact wheel loader in Kansas City. 74 HP, 25 mph, hydrostatic. Daily, weekly, monthly rates. Snow removal, grading, and site work. Delivery available across KC metro.',
+  title: 'Rent a Wheel Loader in Kansas City | CASE 321F | RPM Equipment Leasing',
+  description: 'Rent a CASE 321F compact wheel loader in Kansas City. 74 HP, 25 mph, hydrostatic. Daily, weekly, monthly rates. Snow removal, grading, and site work. Delivery available across our service area.',
 };
 
 export default function RentWheelLoaderKCPage() {
@@ -30,12 +30,12 @@ export default function RentWheelLoaderKCPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-heading mb-6">Why Rent a Wheel Loader in Kansas City?</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Whether you're a snow removal contractor managing multiple KC lots, a landscaper
+            Whether you're a snow removal contractor managing multiple lots, a landscaper
             handling spring site prep, or a general contractor moving material — a compact wheel
             loader is one of the most versatile machines on any job site.
           </p>
           <p className="text-gray-600 leading-relaxed mb-8">
-            At KC Snow Contractors, we rent CASE 321F wheel loaders exclusively. Tier 4 Final
+            At RPM Equipment Leasing, we rent CASE 321F wheel loaders exclusively. Tier 4 Final
             engine, articulated steering for tight lot turns, and 1.3–1.7 yd³ bucket capacity
             to move real volume.
           </p>

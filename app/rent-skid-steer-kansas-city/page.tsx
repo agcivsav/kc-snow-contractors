@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Rent a Skid Steer in Kansas City | CASE SV280B | KC Snow Contractors',
+  title: 'Rent a Skid Steer in Kansas City | CASE SV280B | RPM Equipment Leasing',
   description: 'Rent a CASE SV280B skid steer loader in Kansas City. Vertical lift, high-flow hydraulics, 2,800 lb rated capacity. Snow relocation, landscaping, site work. Daily/weekly/monthly rates.',
 };
 
@@ -30,7 +30,7 @@ export default function RentSkidSteerKCPage() {
 
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="section-heading mb-6">The Right Skid Steer for KC Jobs</h2>
+          <h2 className="section-heading mb-6">The Right Skid Steer for the Job</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
             The CASE SV280B is a vertical-lift skid steer — meaning maximum reach and dump height
             compared to radial lift machines. For snow relocation into trucks, or precise material

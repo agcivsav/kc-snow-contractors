@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'KC Snow Contractors | Heavy Equipment Rental – Kansas City',
+  title: 'RPM Equipment Leasing | Heavy Equipment Rental – Kansas City',
   description:
     'Rent CASE 321F wheel loaders and CASE SV280B skid steers in Kansas City. Year-round availability — snow season and off-season. Daily, weekly, and long-term rates for contractors and direct renters.',
 };
@@ -71,7 +71,7 @@ export default function HomePage() {
           <div className="text-center mb-14">
             <h2 className="section-heading">Two Machines. Every Job Covered.</h2>
             <p className="section-subheading mx-auto">
-              We run CASE equipment exclusively — proven, powerful, and purpose-built for demanding KC work sites.
+              We run CASE equipment exclusively — proven, powerful, and purpose-built for demanding work sites.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -313,7 +313,7 @@ export default function HomePage() {
             Ready to Rent? Let's Talk.
           </h2>
           <p className="text-gray-400 mb-8 text-lg">
-            Get a quote in minutes. Available for snow season and year-round off-season projects across the KC metro.
+            Get a quote in minutes. Available for snow season and year-round off-season projects across the our service area.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/quote" className="btn-primary">

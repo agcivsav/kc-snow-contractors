@@ -8,16 +8,16 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-yellow-500 rounded flex items-center justify-center">
-                <span className="text-black font-extrabold text-sm">KC</span>
+              <div className="w-12 h-8 bg-yellow-500 rounded flex items-center justify-center">
+                <span className="text-black font-extrabold text-sm">RPM</span>
               </div>
               <div>
-                <div className="font-extrabold text-white text-sm">KC Snow Contractors</div>
-                <div className="text-xs text-yellow-400">Equipment Rental</div>
+                <div className="font-extrabold text-white text-sm">RPM Equipment Leasing</div>
+                <div className="text-xs text-yellow-400">Equipment Leasing</div>
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Kansas City's premier heavy equipment rental — built for contractors, available year-round.
+              Premium heavy equipment leasing — built for contractors, available year-round.
             </p>
           </div>
 
@@ -51,14 +51,13 @@ export default function Footer() {
               <li><Link href="/how-it-works" className="hover:text-yellow-400 transition-colors">How It Works</Link></li>
             </ul>
             <div className="mt-4">
-              <p className="text-xs text-gray-500">Kansas City, MO</p>
-              <p className="text-xs text-gray-500 mt-1">Serving the KC metro area</p>
+              <p className="text-xs text-gray-500 mt-1">Serving our local service area</p>
             </div>
           </div>
         </div>
 
         <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} KC Snow Contractors. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} RPM Equipment Leasing. All rights reserved.</p>
           <div className="flex space-x-4 mt-2 sm:mt-0">
             <Link href="/rent-wheel-loader-kansas-city" className="hover:text-gray-300">Wheel Loader Rental KC</Link>
             <Link href="/rent-skid-steer-kansas-city" className="hover:text-gray-300">Skid Steer Rental KC</Link>

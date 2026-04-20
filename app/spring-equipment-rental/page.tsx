@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Spring Equipment Rental Kansas City | KC Snow Contractors',
+  title: 'Spring Equipment Rental Kansas City | RPM Equipment Leasing',
   description: 'Rent wheel loaders and skid steers in Kansas City this spring. Grading, landscaping, topsoil, site prep. Long-term spring rates available. CASE equipment maintained and ready.',
 };
 
@@ -30,7 +30,7 @@ export default function SpringRentalPage() {
             </h1>
             <p className="text-gray-300 text-lg mb-8 leading-relaxed">
               When the snow melts, the real work begins. Rent CASE wheel loaders and skid steers
-              this spring for grading, landscaping, topsoil work, and site cleanup across the KC metro.
+              this spring for grading, landscaping, topsoil work, and site cleanup across the our service area.
             </p>
             <Link href="/quote" className="btn-primary">Get Spring Pricing</Link>
           </div>

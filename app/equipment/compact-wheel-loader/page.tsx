@@ -124,7 +124,7 @@ export default function WheelLoaderPage() {
       <section className="bg-gray-900 py-14">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-extrabold text-white mb-4">Ready to Rent the 321F?</h2>
-          <p className="text-gray-400 mb-8">Daily, weekly, and monthly rates. Delivery available across the KC metro.</p>
+          <p className="text-gray-400 mb-8">Daily, weekly, and monthly rates. Delivery available across the our service area.</p>
           <Link href="/quote" className="btn-primary text-sm">Get a Quote Now</Link>
         </div>
       </section>

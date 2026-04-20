@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Off-Season Equipment Rental Kansas City | KC Snow Contractors',
+  title: 'Off-Season Equipment Rental Kansas City | RPM Equipment Leasing',
   description: 'Rent heavy equipment in Kansas City year-round — not just winter. Long-term off-season rates on CASE wheel loaders and skid steers. Spring, summer, fall availability.',
 };
 

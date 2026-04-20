@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'How Equipment Rental Works | KC Snow Contractors',
-  description: 'Simple rental process. Request a quote, confirm dates, get delivery. KC Snow Contractors makes heavy equipment rental fast and hassle-free in Kansas City.',
+  title: 'How Equipment Rental Works | RPM Equipment Leasing',
+  description: 'Simple rental process. Request a quote, confirm dates, get delivery. RPM Equipment Leasing makes heavy equipment rental fast and hassle-free in Kansas City.',
 };
 
 export default function HowItWorksPage() {
@@ -38,7 +38,7 @@ export default function HowItWorksPage() {
               {
                 step: '04',
                 title: 'Delivery or Pickup',
-                body: 'Tell us which you prefer. We deliver to your job site on a flatbed, or you pick up from our KC yard. We confirm delivery timing so you\'re not waiting around.',
+                body: 'Tell us which you prefer. We deliver to your job site on a flatbed, or you pick up from our yard. We confirm delivery timing so you\'re not waiting around.',
               },
               {
                 step: '05',

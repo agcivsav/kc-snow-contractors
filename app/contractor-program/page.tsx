@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Contractor Rental Program | KC Snow Contractors Kansas City',
+  title: 'Contractor Rental Program | RPM Equipment Leasing Kansas City',
   description: 'Dedicated contractor rental program in Kansas City. Multi-unit discounts, priority availability, Net-30 billing, and dedicated account management for landscapers, snow companies, and general contractors.',
 };
 
@@ -41,7 +41,7 @@ export default function ContractorProgramPage() {
               For Contractors
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-              The KC Contractor<br />
+              The RPM Contractor<br />
               <span className="text-yellow-400">Rental Program</span>
             </h1>
             <p className="text-gray-300 text-lg leading-relaxed">
