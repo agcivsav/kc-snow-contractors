@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  # Do not set publish; @netlify/plugin-nextjs owns the output layout for API/SSR
 
 [build.environment]
   NODE_VERSION = "20"
