@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,15 +8,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-8 bg-yellow-500 rounded flex items-center justify-center">
-                <span className="text-black font-extrabold text-sm">RPM</span>
-              </div>
-              <div>
-                <div className="font-extrabold text-white text-sm">RPM Equipment Leasing</div>
-                <div className="text-xs text-yellow-400">Equipment Leasing</div>
-              </div>
-            </div>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/logo.svg"
+                alt="RPM Equipment Leasing"
+                width={360}
+                height={120}
+                className="h-12 w-auto"
+              />
+            </Link>
             <p className="text-sm text-gray-400 leading-relaxed">
               Premium heavy equipment leasing — built for contractors, available year-round.
             </p>
