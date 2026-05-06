@@ -37,7 +37,7 @@ export default function WheelLoaderPage() {
       <section className="bg-gray-900 text-white py-0 overflow-hidden">
         <div className="relative h-80 md:h-96">
           <img
-            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1400&q=80&auto=format&fit=crop"
+            src="/images/compact-wheel-loader.jpg"
             alt="CASE 321F Compact Wheel Loader"
             className="w-full h-full object-cover"
           />

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -19,14 +20,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-12 h-8 bg-yellow-500 rounded flex items-center justify-center">
-              <span className="text-black font-extrabold text-sm">RPM</span>
-            </div>
-            <div>
-              <div className="font-extrabold text-base leading-tight">RPM Equipment Leasing</div>
-              <div className="text-xs text-yellow-400 leading-tight">Equipment Leasing</div>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.svg"
+              alt="RPM Equipment Leasing"
+              width={360}
+              height={120}
+              priority
+              className="h-14 w-auto py-2 px-1"
+            />
           </Link>
 
           {/* Desktop nav */}

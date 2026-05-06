@@ -29,7 +29,7 @@ export default function ContractorProgramPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&q=80&auto=format&fit=crop")',
+            backgroundImage: 'url("/images/contractor-workshop.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.25,

@@ -13,7 +13,7 @@ export default function SpringRentalPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=80&auto=format&fit=crop")',
+            backgroundImage: 'url("/images/spring-garden.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.25,

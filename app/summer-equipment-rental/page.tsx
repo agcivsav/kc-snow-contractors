@@ -13,7 +13,7 @@ export default function SummerRentalPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&auto=format&fit=crop")',
+            backgroundImage: 'url("/images/construction-hero.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.25,

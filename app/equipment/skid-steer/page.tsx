@@ -37,7 +37,7 @@ export default function SkidSteerPage() {
       <section className="bg-gray-900 text-white py-0 overflow-hidden">
         <div className="relative h-80 md:h-96">
           <img
-            src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=1400&q=80&auto=format&fit=crop"
+            src="/images/skid-steer.jpg"
             alt="CASE SV280B Skid Steer Loader"
             className="w-full h-full object-cover"
           />

@@ -20,7 +20,7 @@ export default function OffSeasonPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop")',
+            backgroundImage: 'url("/images/off-season-snow.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.25,

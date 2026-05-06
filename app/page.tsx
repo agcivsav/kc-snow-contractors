@@ -15,7 +15,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&auto=format&fit=crop")',
+            backgroundImage: 'url("/images/construction-hero.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.35,
@@ -79,7 +79,7 @@ export default function HomePage() {
             <div className="card group">
               <div className="relative h-56 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80&auto=format&fit=crop"
+                  src="/images/compact-wheel-loader.jpg"
                   alt="CASE 321F Compact Wheel Loader"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -117,7 +117,7 @@ export default function HomePage() {
             <div className="card group">
               <div className="relative h-56 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=800&q=80&auto=format&fit=crop"
+                  src="/images/skid-steer.jpg"
                   alt="CASE SV280B Skid Steer Loader"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -302,7 +302,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1542621334-a254cf47733d?w=1600&q=80&auto=format&fit=crop")',
+            backgroundImage: 'url("/images/snow-plow.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.2,

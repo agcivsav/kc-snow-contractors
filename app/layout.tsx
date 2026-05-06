@@ -7,7 +7,11 @@ import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.rpmequipmentleasing.com';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: 'RPM Equipment Leasing | Heavy Equipment Rental – Kansas City',
     template: '%s | RPM Equipment Leasing',

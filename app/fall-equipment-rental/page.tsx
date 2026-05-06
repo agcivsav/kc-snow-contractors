@@ -13,7 +13,7 @@ export default function FallRentalPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&q=80&auto=format&fit=crop")',
+            backgroundImage: 'url("/images/fall-landscape.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.25,
