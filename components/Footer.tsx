@@ -27,6 +27,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Equipment</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/equipment/compact-wheel-loader" className="hover:text-yellow-400 transition-colors">CASE 321F Wheel Loader</Link></li>
+              <li><Link href="/equipment/521f" className="hover:text-yellow-400 transition-colors">CASE 521F Wheel Loader</Link></li>
               <li><Link href="/equipment/skid-steer" className="hover:text-yellow-400 transition-colors">CASE SV280B Skid Steer</Link></li>
               <li><Link href="/quote" className="hover:text-yellow-400 transition-colors">Request a Quote</Link></li>
             </ul>
