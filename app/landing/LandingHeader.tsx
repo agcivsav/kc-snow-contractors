@@ -14,6 +14,7 @@ export function LandingHeader() {
             priority
             className="h-12 w-auto"
           />
+          
         </Link>
       </div>
     </header>
