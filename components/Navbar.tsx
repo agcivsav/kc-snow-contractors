@@ -8,8 +8,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { href: '/equipment/compact-wheel-loader', label: 'Wheel Loader' },
-    { href: '/equipment/skid-steer', label: 'Skid Steer' },
+    { href: '/inventory', label: 'Inventory' },
+     { href: '/inventory/compact-wheel-loader', label: 'Wheel Loader' },
+    { href: '/inventory/skid-steer', label: 'Skid Steer' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/contractor-program', label: 'Contractor Program' },
     { href: '/contact', label: 'Contact' },

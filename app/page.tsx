@@ -40,7 +40,7 @@ export default function HomePage() {
                 Get a Quote
               </Link>
               <Link
-                href="/equipment/compact-wheel-loader"
+                href="/inventory/compact-wheel-loader"
                 className="btn-secondary text-sm"
               >
                 View Equipment
@@ -129,7 +129,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <Link
-                  href="/equipment/compact-wheel-loader"
+                  href="/inventory/compact-wheel-loader"
                   className="btn-primary w-full text-center text-xs py-2.5"
                 >
                   View Specs & Rent
@@ -180,7 +180,7 @@ export default function HomePage() {
                 </div>
                 <a
                   className="btn-primary w-full text-center text-xs py-2.5"
-                  href="/equipment/521f/"
+                  href="/inventory/521f/"
                 >
                   View Specs &amp; Rent
                 </a>
@@ -231,7 +231,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <Link
-                  href="/equipment/skid-steer"
+                  href="/inventory/skid-steer"
                   className="btn-primary w-full text-center text-xs py-2.5"
                 >
                   View Specs & Rent

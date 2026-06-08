@@ -60,7 +60,7 @@ export default function RentSkidSteerKCPage() {
             <p className="text-gray-400 mb-6">Daily, weekly, monthly rates. Same-day response on quote requests.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/quote" className="btn-primary">Request a Quote</Link>
-              <Link href="/equipment/skid-steer" className="btn-secondary text-sm">Full Specs</Link>
+              <Link href="/inventory/skid-steer" className="btn-secondary text-sm">Full Specs</Link>
             </div>
           </div>
         </div>

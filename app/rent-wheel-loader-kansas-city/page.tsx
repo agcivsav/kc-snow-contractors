@@ -59,7 +59,7 @@ export default function RentWheelLoaderKCPage() {
             <p className="text-gray-400 mb-6">Request a quote — we respond same day with availability and pricing.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/quote" className="btn-primary">Request a Quote</Link>
-              <Link href="/equipment/compact-wheel-loader" className="btn-secondary text-sm">Full Specs</Link>
+              <Link href="/inventory/compact-wheel-loader" className="btn-secondary text-sm">Full Specs</Link>
             </div>
           </div>
         </div>
