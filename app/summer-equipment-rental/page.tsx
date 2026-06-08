@@ -13,7 +13,7 @@ export default function SummerRentalPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("/images/construction-hero.jpg")',
+            backgroundImage: 'url("/images/summer-rental.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.25,

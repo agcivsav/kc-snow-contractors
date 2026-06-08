@@ -13,9 +13,9 @@ export default function SpringRentalPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("/images/spring-garden.jpg")',
+            backgroundImage: 'url("/images/spring-rental.jpg")',
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center 20%',
             opacity: 0.25,
           }}
         />

@@ -13,9 +13,9 @@ export default function FallRentalPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("/images/fall-landscape.jpg")',
+            backgroundImage: 'url("/images/fall-rental.jpg")',
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center 20%',
             opacity: 0.25,
           }}
         />
