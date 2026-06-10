@@ -190,7 +190,7 @@ export default function HomePage() {
             <div className="card group">
               <div className="relative h-56 overflow-hidden">
                 <img
-                  src="/images/case-sv280b-skid-steer.jpg"
+                  src="/images/skid1.png"
                   alt="CASE SV280B Skid Steer Loader"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

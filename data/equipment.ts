@@ -153,7 +153,7 @@ export const equipmentItems: EquipmentItem[] = [
     description:
       "Vertical lift design — High-flow hydraulics — All-around visibility — Universal attachment compatibility. The go-to machine for snow relocation, site prep, and landscaping.",
     tagline: "90 HP — 2,800 lb Rated Capacity — Vertical Lift — High-Flow Hydraulics",
-    image: "/images/case-sv280b-skid-steer.jpg",
+    image: "/images/skid1.png",
     imageAlt: "CASE SV280B Skid Steer Loader",
     gallery: [
       { src: "/images/skid1.png", alt: "CASE SV280B skid steer loader" },
