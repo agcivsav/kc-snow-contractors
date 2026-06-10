@@ -143,6 +143,7 @@ export const equipmentItems: EquipmentItem[] = [
     ctaDescription: "Daily, weekly, and monthly rates. Delivery available.",
   },
   {
+    
     slug: "skid-steer",
     model: "CASE SV280B",
     make: "CASE",
