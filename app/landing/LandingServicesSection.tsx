@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LandingFormCtaLink } from "./LandingFormCtaLink";
 
 const services = [
   {
@@ -56,12 +56,9 @@ export function LandingServicesSection() {
                 <p className="text-gray-600 text-sm mb-5 leading-relaxed">
                   {service.desc}
                 </p>
-                <Link
-                  href="#landingForm"
-                  className="btn-primary w-full text-center text-xs py-2.5"
-                >
+                <LandingFormCtaLink className="btn-primary w-full text-center text-xs py-2.5">
                   Get a Quote
-                </Link>
+                </LandingFormCtaLink>
               </div>
             </div>
           ))}

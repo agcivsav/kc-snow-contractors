@@ -1,9 +1,10 @@
 import { LandingForm } from "./LandingForm";
+import { LANDING_FORM_SECTION_ID } from "./landing-form-shared";
 
 export function LandingConversationSection() {
   return (
     <section
-      id="landingForm"
+      id={LANDING_FORM_SECTION_ID}
       className="relative bg-gray-900 py-20 overflow-hidden scroll-mt-20"
     >
       <div

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LandingFormCtaLink } from "./LandingFormCtaLink";
 
 const steps = [
   {
@@ -50,9 +50,9 @@ export function LandingHowItWorksSection() {
           ))}
         </div>
         <div className="text-center mt-10">
-          <Link href="#landingForm" className="btn-primary text-sm">
+          <LandingFormCtaLink className="btn-primary text-sm">
             Get My Free Quote
-          </Link>
+          </LandingFormCtaLink>
         </div>
       </div>
     </section>
