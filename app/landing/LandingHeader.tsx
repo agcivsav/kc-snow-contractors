@@ -3,6 +3,10 @@ import Link from "next/link";
 
 export function LandingHeader() {
   return (
+   <>
+   <div className="p-4 w-full bg-yellow-500 text-center">
+<a href="tel:+"></a>
+   </div>
     <header className="bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <Link href="#" className="inline-flex items-center" aria-label="RPM Equipment Leasing home">
@@ -18,5 +22,6 @@ export function LandingHeader() {
         </Link>
       </div>
     </header>
+   </>
   );
 }

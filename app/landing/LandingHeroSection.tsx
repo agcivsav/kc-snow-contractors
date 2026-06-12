@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { LandingForm } from "./LandingForm";
+import { LandingFormCtaLink } from "./LandingFormCtaLink";
 
 export function LandingHeroSection() {
   return (
@@ -39,6 +40,11 @@ export function LandingHeroSection() {
                 </li>
               ))}
             </ul>
+            <div className="text-left mt-10">
+                      <LandingFormCtaLink className="btn-primary text-sm">
+                        Get My Free Quote
+                      </LandingFormCtaLink>
+                    </div>
           </div>
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8 text-gray-900">
             <h2 className="text-xl font-extrabold text-gray-900 mb-1">
