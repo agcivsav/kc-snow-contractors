@@ -44,9 +44,9 @@ export const equipmentItems: EquipmentItem[] = [
     image: "/images/case-321f-wheel-loader.jpg",
     imageAlt: "CASE 321F Compact Wheel Loader",
     gallery: [
-      { src: "/images/321F-1.png", alt: "CASE 321F front view" },
-      { src: "/images/321F-2.png", alt: "Operator cab view on job site" },
-      { src: "/images/case321F.png", alt: "Snow removal operations" },
+      { src: "/images/321F-1.jpg", alt: "CASE 321F front view" },
+      { src: "/images/321F-2.jpg", alt: "Operator cab view on job site" },
+      { src: "/images/case321F.jpg", alt: "Snow removal operations" },
     ],
     cardStats: [
       { val: "74 HP", label: "Horsepower" },
@@ -100,9 +100,9 @@ export const equipmentItems: EquipmentItem[] = [
     image: "/images/case-sv280b-skid-steer.jpg",
     imageAlt: "CASE 521F Wheel Loader",
     gallery: [
-      { src: "/images/512F.png", alt: "CASE 521F on construction site" },
-      { src: "/images/521f.png", alt: "High-volume snow management" },
-      { src: "/images/case521f.png", alt: "Job site operations" },
+      { src: "/images/512F.jpg", alt: "CASE 521F on construction site" },
+      { src: "/images/521f.jpg", alt: "High-volume snow management" },
+      { src: "/images/case521f.jpg", alt: "Job site operations" },
     ],
     cardStats: [
       { val: "121 HP", label: "Horsepower" },
@@ -154,12 +154,12 @@ export const equipmentItems: EquipmentItem[] = [
     description:
       "Vertical lift design — High-flow hydraulics — All-around visibility — Universal attachment compatibility. The go-to machine for snow relocation, site prep, and landscaping.",
     tagline: "90 HP — 2,800 lb Rated Capacity — Vertical Lift — High-Flow Hydraulics",
-    image: "/images/skid1.png",
+    image: "/images/skid1.jpg",
     imageAlt: "CASE SV280B Skid Steer Loader",
     gallery: [
-      { src: "/images/skid1.png", alt: "CASE SV280B skid steer loader" },
-      { src: "/images/skid2.png", alt: "Cab view from inside the SV280B" },
-      { src: "/images/skid3.png", alt: "Snow relocation and site work" },
+      { src: "/images/skid1.jpg", alt: "CASE SV280B skid steer loader" },
+      { src: "/images/skid2.jpg", alt: "Cab view from inside the SV280B" },
+      { src: "/images/skid3.jpg", alt: "Snow relocation and site work" },
     ],
     cardStats: [
       { val: "Vertical", label: "Lift Type" },

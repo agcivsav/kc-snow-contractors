@@ -10,6 +10,7 @@ export function LandingHeroSection() {
         alt="View from inside a CASE skid steer cab overlooking a job site"
         fill
         priority
+        sizes="100vw"
         className="object-cover opacity-35"
       />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">

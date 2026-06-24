@@ -20,7 +20,7 @@ export function EquipmentGallery({ images }: EquipmentGalleryProps) {
           alt={active.alt}
           fill
           priority={activeIndex === 0}
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 1024px) 100vw, 640px"
           className="object-cover"
         />
       </div>

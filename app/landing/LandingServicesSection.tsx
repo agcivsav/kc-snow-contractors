@@ -18,7 +18,7 @@ const services = [
   {
     title: "CASE SV280B Skid Steer Loader",
     desc: "Vertical lift design — High-flow hydraulics — Universal attachment compatibility. The go-to machine for snow relocation and site prep.",
-    image: "/images/skid1.png",
+    image: "/images/skid1.jpg",
     alt: "CASE SV280B Skid Steer Loader",
     badge: "Skid Steer Loader",
   },

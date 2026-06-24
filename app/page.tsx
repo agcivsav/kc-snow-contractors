@@ -18,6 +18,7 @@ export default function HomePage() {
           alt="View from inside a CASE skid steer cab overlooking a job site"
           fill
           priority
+          sizes="100vw"
           className="object-cover opacity-35"
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
@@ -190,7 +191,7 @@ export default function HomePage() {
             <div className="card group">
               <div className="relative h-56 overflow-hidden">
                 <img
-                  src="/images/skid1.png"
+                  src="/images/skid1.jpg"
                   alt="CASE SV280B Skid Steer Loader"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
