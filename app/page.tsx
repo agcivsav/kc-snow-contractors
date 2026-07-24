@@ -141,18 +141,18 @@ export default function HomePage() {
               <div className="relative h-56 overflow-hidden">
                 <img
                   src="/images/case-sv280b-skid-steer.jpg"
-                  alt="CASE 521F Wheel Loader"
+                  alt="CASE 521G Wheel Loader"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 <div className="absolute bottom-4 left-4">
-                  <div className="text-white font-bold text-lg">CASE 521F</div>
+                  <div className="text-white font-bold text-lg">CASE 521G</div>
                   <div className="text-yellow-400 text-sm">Wheel Loader</div>
                 </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-extrabold text-gray-900 mb-2">
-                  CASE 521F Wheel Loader
+                  CASE 521G Wheel Loader
                 </h3>
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                   121 hp — Powershift transmission — 19,500+ lb operating weight
@@ -181,7 +181,7 @@ export default function HomePage() {
                 </div>
                 <a
                   className="btn-primary w-full text-center text-xs py-2.5"
-                  href="/inventory/521f/"
+                  href="/inventory/521G/"
                 >
                   View Specs &amp; Rent
                 </a>

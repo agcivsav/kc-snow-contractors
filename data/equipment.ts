@@ -87,22 +87,23 @@ export const equipmentItems: EquipmentItem[] = [
     ctaDescription: "Daily, weekly, and monthly rates. Delivery available across our service area.",
   },
   {
-    slug: "521f",
-    model: "CASE 521F",
+    slug: "521G",
+    model: "CASE 521G",
     make: "CASE",
-    modelNumber: "521F",
+    modelNumber: "521G",
     year: "2025",
     category: "Wheel Loader",
-    title: "CASE 521F Wheel Loader",
+    title: "CASE 521G Wheel Loader",
     description:
       "121 hp — Powershift transmission — 19,500+ lb operating weight — 2.5–3.5 yd³ bucket. Built for high-production loading and snow management at larger sites.",
     tagline: "121 HP — Powershift Transmission — 2.5–3.5 yd³ Bucket — 19,500 lb",
     image: "/images/case-sv280b-skid-steer.jpg",
-    imageAlt: "CASE 521F Wheel Loader",
+    imageAlt: "CASE 521G Wheel Loader",
     gallery: [
-      { src: "/images/512F.jpg", alt: "CASE 521F on construction site" },
-      { src: "/images/521f.jpg", alt: "High-volume snow management" },
-      { src: "/images/case521f.jpg", alt: "Job site operations" },
+      { src: "/images/521G.png", alt: "High-volume snow management" },
+            { src: "/images/521g.jpg", alt: "CASE 521G on construction site" },
+
+      { src: "/images/case521G.png", alt: "Job site operations" },
     ],
     cardStats: [
       { val: "121 HP", label: "Horsepower" },
@@ -130,16 +131,16 @@ export const equipmentItems: EquipmentItem[] = [
       { label: "Hydraulic System", value: "Load-sensing, variable-flow" },
     ],
     applications: [
-      { title: "High-Volume Snow Management", desc: "Larger bucket means fewer passes per lot. The 521F moves serious snow volume at commercial properties." },
+      { title: "High-Volume Snow Management", desc: "Larger bucket means fewer passes per lot. The 521G moves serious snow volume at commercial properties." },
       { title: "Aggregate & Material Loading", desc: "2.5–3.5 yd³ capacity handles gravel, sand, and fill at production loading rates." },
       { title: "Road Base & Infrastructure", desc: "Powershift transmission and high breakout force handle compacted material and road base work." },
       { title: "Construction Site Support", desc: "Long-term monthly rentals available for multi-phase construction projects." },
       { title: "Land Clearing", desc: "High ground clearance and strong hydraulics for clearing brush, debris, and demolition material." },
     ],
-    metaTitle: "Rent CASE 521F Wheel Loader | Kansas City",
+    metaTitle: "Rent CASE 521G Wheel Loader | Kansas City",
     metaDescription:
-      "Rent the CASE 521F Wheel Loader in Kansas City. 121 HP, powershift transmission, 2.5–3.5 yd³ bucket capacity.",
-    ctaHeading: "Ready to Rent the 521F?",
+      "Rent the CASE 521G Wheel Loader in Kansas City. 121 HP, powershift transmission, 2.5–3.5 yd³ bucket capacity.",
+    ctaHeading: "Ready to Rent the 521G?",
     ctaDescription: "Daily, weekly, and monthly rates. Delivery available.",
   },
   {

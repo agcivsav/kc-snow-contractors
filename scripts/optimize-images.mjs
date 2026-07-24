@@ -9,9 +9,9 @@ const galleryPngs = new Set([
   "321F-1.png",
   "321F-2.png",
   "512F.png",
-  "521f.png",
+  "521G.png",
   "case321F.png",
-  "case521f.png",
+  "case521G.png",
   "skid1.png",
   "skid2.png",
   "skid3.png",
@@ -25,10 +25,16 @@ async function optimizeFile(filename) {
   const metadata = await sharp(inputPath).metadata();
   const isGalleryPng = galleryPngs.has(filename);
   const maxWidth = isGalleryPng ? 1400 : 1920;
-  const outputExt = filename.toLowerCase().endsWith(".png") ? ".jpg" : path.extname(filename);
-  const outputName = path.basename(filename, path.extname(filename)) + outputExt;
+  const outputExt = filename.toLowerCase().endsWith(".png")
+    ? ".jpg"
+    : path.extname(filename);
+  const outputName =
+    path.basename(filename, path.extname(filename)) + outputExt;
   const outputPath = path.join(imagesDir, outputName);
-  const tempPath = outputPath === inputPath ? path.join(imagesDir, `.tmp-${outputName}`) : outputPath;
+  const tempPath =
+    outputPath === inputPath
+      ? path.join(imagesDir, `.tmp-${outputName}`)
+      : outputPath;
 
   await sharp(inputPath)
     .rotate()
@@ -57,7 +63,9 @@ async function optimizeFile(filename) {
   };
 }
 
-const files = fs.readdirSync(imagesDir).filter((f) => /\.(png|jpe?g)$/i.test(f));
+const files = fs
+  .readdirSync(imagesDir)
+  .filter((f) => /\.(png|jpe?g)$/i.test(f));
 const results = [];
 
 for (const file of files) {

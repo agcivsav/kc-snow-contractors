@@ -7,7 +7,7 @@ import { equipmentItems } from "@/data/equipment";
 export const metadata: Metadata = {
   title: "Equipment Inventory | RPM Equipment Leasing – Kansas City",
   description:
-    "Browse our CASE equipment inventory — 321F compact wheel loader, 521F wheel loader, and SV280B skid steer. Available year-round for rent in Kansas City.",
+    "Browse our CASE equipment inventory — 321F compact wheel loader, 521G wheel loader, and SV280B skid steer. Available year-round for rent in Kansas City.",
 };
 
 export default function InventoryPage() {

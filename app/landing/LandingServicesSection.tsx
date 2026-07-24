@@ -9,10 +9,10 @@ const services = [
     badge: "Compact Wheel Loader",
   },
   {
-    title: "CASE 521F Wheel Loader",
+    title: "CASE 521G Wheel Loader",
     desc: "121 hp — Powershift transmission — 19,500+ lb operating weight. Built for high-production loading and snow management.",
     image: "/images/case-sv280b-skid-steer.jpg",
-    alt: "CASE 521F Wheel Loader",
+    alt: "CASE 521G Wheel Loader",
     badge: "Wheel Loader",
   },
   {
