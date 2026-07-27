@@ -174,7 +174,7 @@ export default function HomePage() {
                   </div>
                   <div className="text-center bg-gray-50 rounded-lg p-2">
                     <div className="font-extrabold text-gray-900 text-sm">
-                      19,500 lb
+24,200 lb
                     </div>
                     <div className="text-xs text-gray-500">Op. Weight</div>
                   </div>

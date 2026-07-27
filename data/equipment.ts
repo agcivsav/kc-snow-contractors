@@ -96,7 +96,7 @@ export const equipmentItems: EquipmentItem[] = [
     title: "CASE 521G Wheel Loader",
     description:
       "121 hp — Powershift transmission — 19,500+ lb operating weight — 2.5–3.5 yd³ bucket. Built for high-production loading and snow management at larger sites.",
-    tagline: "121 HP — Powershift Transmission — 2.5–3.5 yd³ Bucket — 19,500 lb",
+    tagline: "121 HP — Powershift Transmission — 2.5–3.5 yd³ Bucket — 24,200 lb",
     image: "/images/case-sv280b-skid-steer.jpg",
     imageAlt: "CASE 521G Wheel Loader",
     gallery: [
@@ -108,18 +108,18 @@ export const equipmentItems: EquipmentItem[] = [
     cardStats: [
       { val: "121 HP", label: "Horsepower" },
       { val: "2.5–3.5 yd³", label: "Bucket" },
-      { val: "19,500 lb", label: "Op. Weight" },
+      { val: "24,200 lb", label: "Op. Weight" },
     ],
     stats: [
       { num: "121 HP", label: "Net Power" },
       { num: "2.5–3.5 yd³", label: "Bucket Capacity" },
-      { num: "19,500 lb", label: "Operating Weight" },
+      { num: "24,200 lb", label: "Operating Weight" },
       { num: "Powershift", label: "Transmission" },
     ],
     specs: [
       { label: "Engine", value: "FPT N67, Tier 4 Final" },
       { label: "Net Power", value: "121 HP (90 kW)" },
-      { label: "Operating Weight", value: "19,500 lb (8,845 kg)" },
+      { label: "Operating Weight", value: "24,200 lb (8,845 kg)" },
       { label: "Transmission", value: "Powershift, 4-speed F/R" },
       { label: "Steering", value: "Articulated, center-pivot" },
       { label: "Bucket Capacity", value: "2.5–3.5 yd³ (1.9–2.7 m³)" },
