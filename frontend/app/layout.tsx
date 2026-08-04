@@ -11,7 +11,10 @@ import {
   type SiteSettingsData,
 } from '@/components/site/site-settings-defaults';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.rpmequipmentleasing.com';

@@ -1,18 +1,16 @@
 {
-  "name": "kc-snow-contractors",
+  "name": "kc-snow-contractors-frontend",
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=24"
+    "node": ">=22"
   },
   "scripts": {
-    "dev": "next dev",
-    "dev:studio": "npm run dev --prefix Sanity",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "optimize-images": "node scripts/optimize-images.mjs",
-    "trigger:netlify": "curl -X POST -d {} https://api.netlify.com/build_hooks/6a721add3380780de226f6e0"
+    "optimize-images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@sanity/client": "^7.26.0",

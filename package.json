@@ -1,0 +1,12 @@
+{
+  "name": "kc-snow-contractors",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "dev:studio": "npm run dev --prefix Sanity",
+    "build": "npm run build --prefix frontend",
+    "start": "npm run start --prefix frontend",
+    "lint": "npm run lint --prefix frontend",
+    "trigger:netlify": "curl -X POST -d {} https://api.netlify.com/build_hooks/6a721add3380780de226f6e0"
+  }
+}

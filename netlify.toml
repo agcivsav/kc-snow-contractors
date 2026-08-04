@@ -1,4 +1,5 @@
 [build]
+  base = "frontend"
   command = "npm run build"
   # Do not set publish; @netlify/plugin-nextjs owns the output layout for API/SSR
 

@@ -3,10 +3,6 @@ const nextConfig = {
   // Do not use `output: 'export'` while using `app/api/**/route` — static export
   // has no server runtime, so /api/* returns 404 on Netlify and elsewhere.
   trailingSlash: true,
-  // Studio lives in ./Sanity with its own package.json — never typecheck it in Next builds
-  typescript: {
-    tsconfigPath: "./tsconfig.json",
-  },
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
