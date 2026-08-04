@@ -1,69 +1,69 @@
-import { LandingFormCtaLink } from "./LandingFormCtaLink";
+import {resolveSanityImageUrl} from "@/lib/sanity/image"
+import type {LandingServicesData} from "./landing-types"
+import {LandingFormCtaLink} from "./LandingFormCtaLink"
 
-const services = [
-  {
-    title: "CASE 321F Compact Wheel Loader",
-    desc: "74 hp — 25 mph top speed — Hydrostatic transmission. Built for productivity in tight spaces — snow, grading, and material handling.",
-    image: "/images/case-321f-wheel-loader.jpg",
-    alt: "CASE 321F Compact Wheel Loader",
-    badge: "Compact Wheel Loader",
-  },
-  {
-    title: "CASE 521G Wheel Loader",
-    desc: "121 hp — Powershift transmission — 19,500+ lb operating weight. Built for high-production loading and snow management.",
-    image: "/images/case-sv280b-skid-steer.jpg",
-    alt: "CASE 521G Wheel Loader",
-    badge: "Wheel Loader",
-  },
-  {
-    title: "CASE SV280B Skid Steer Loader",
-    desc: "Vertical lift design — High-flow hydraulics — Universal attachment compatibility. The go-to machine for snow relocation and site prep.",
-    image: "/images/skid1.jpg",
-    alt: "CASE SV280B Skid Steer Loader",
-    badge: "Skid Steer Loader",
-  },
-];
+type LandingServicesSectionProps = {
+  data: NonNullable<LandingServicesData>
+}
 
-export function LandingServicesSection() {
+export function LandingServicesSection({data}: LandingServicesSectionProps) {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="section-heading">Our Services</h2>
-          <p className="section-subheading mx-auto">
-            We run CASE equipment exclusively — proven, powerful, and
-            purpose-built for demanding work sites across every season.
-          </p>
+          {data.heading ? (
+            <h2 className="section-heading">{data.heading}</h2>
+          ) : null}
+          {data.subheading ? (
+            <p className="section-subheading mx-auto">{data.subheading}</p>
+          ) : null}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div key={service.title} className="card group">
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <div className="text-yellow-400 text-sm">{service.badge}</div>
+        {data.services?.length ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {data.services.map((service) => {
+              const src =
+                resolveSanityImageUrl(service.image, 800) ||
+                service.image?.asset?.url ||
+                ""
+              return (
+                <div key={service._key || service.title} className="card group">
+                  <div className="relative h-56 overflow-hidden">
+                    {src ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={src}
+                        alt={service.image?.alt || service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : null}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    {service.badge ? (
+                      <div className="absolute bottom-4 left-4">
+                        <div className="text-yellow-400 text-sm">
+                          {service.badge}
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-extrabold text-gray-900 mb-2">
+                      {service.title}
+                    </h3>
+                    {service.description ? (
+                      <p className="text-gray-600 text-sm mb-5 leading-relaxed">
+                        {service.description}
+                      </p>
+                    ) : null}
+                    <LandingFormCtaLink className="btn-primary w-full text-center text-xs py-2.5">
+                      {service.ctaLabel || "Get a Quote"}
+                    </LandingFormCtaLink>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-extrabold text-gray-900 mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-5 leading-relaxed">
-                  {service.desc}
-                </p>
-                <LandingFormCtaLink className="btn-primary w-full text-center text-xs py-2.5">
-                  Get a Quote
-                </LandingFormCtaLink>
-              </div>
-            </div>
-          ))}
-        </div>
+              )
+            })}
+          </div>
+        ) : null}
       </div>
     </section>
-  );
+  )
 }

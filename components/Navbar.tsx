@@ -1,30 +1,45 @@
-'use client';
+"use client"
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
+import Image from "next/image"
+import Link from "next/link"
+import {useState} from "react"
+import {stegaClean} from "next-sanity"
+import {resolveSanityImageUrl} from "@/lib/sanity/image"
+import {
+  defaultSiteSettings,
+  type SiteSettingsData,
+} from "./site/site-settings-defaults"
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
+type NavbarProps = {
+  settings?: SiteSettingsData | null
+}
 
-  const links = [
-    { href: '/inventory', label: 'Inventory' },
-     { href: '/inventory/compact-wheel-loader', label: 'Wheel Loader' },
-    { href: '/inventory/skid-steer', label: 'Skid Steer' },
-    { href: '/how-it-works', label: 'How It Works' },
-    { href: '/contractor-program', label: 'Contractor Program' },
-    { href: '/contact', label: 'Contact' },
-  ];
+function cleanHref(href?: string) {
+  return href ? stegaClean(href) : ""
+}
+
+export default function Navbar({settings}: NavbarProps) {
+  const [open, setOpen] = useState(false)
+  const header = settings?.header ?? defaultSiteSettings.header
+  const brandName = settings?.brandName || defaultSiteSettings.brandName || "RPM Equipment Leasing"
+  const links = header?.navLinks?.length
+    ? header.navLinks
+    : defaultSiteSettings.header?.navLinks || []
+  const cta = header?.cta ?? defaultSiteSettings.header?.cta
+  const logoSrc =
+    resolveSanityImageUrl(settings?.logo, 720) ||
+    settings?.logo?.asset?.url ||
+    "/logo.svg"
+  const logoAlt = settings?.logo?.alt || brandName
 
   return (
     <nav className="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.svg"
-              alt="RPM Equipment Leasing"
+              src={logoSrc}
+              alt={logoAlt}
               width={360}
               height={120}
               priority
@@ -32,25 +47,25 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop nav */}
           <div className="hidden md:flex items-center space-x-6">
             {links.map((l) => (
               <Link
-                key={l.href}
-                href={l.href}
+                key={l._key || l.href}
+                href={cleanHref(l.href)}
                 className="text-sm text-gray-300 hover:text-yellow-400 transition-colors font-medium"
               >
-                {l.label}
+                {l.label || l.title}
               </Link>
             ))}
-            <Link href="/quote" className="btn-primary text-xs py-2 px-4">
-              Get a Quote
-            </Link>
+            {cta?.href ? (
+              <Link href={cleanHref(cta.href)} className="btn-primary text-xs py-2 px-4">
+                {cta.label || cta.title}
+              </Link>
+            ) : null}
           </div>
 
-          {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 text-gray-300 hover:text-white"
+            className="md:hidden p-2 text-gray-300 hover:text-white min-w-11 min-h-11"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -64,25 +79,30 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile menu */}
-        {open && (
+        {open ? (
           <div className="md:hidden border-t border-gray-700 py-3 space-y-1">
             {links.map((l) => (
               <Link
-                key={l.href}
-                href={l.href}
+                key={l._key || l.href}
+                href={cleanHref(l.href)}
                 className="block px-2 py-2 text-sm text-gray-300 hover:text-yellow-400"
                 onClick={() => setOpen(false)}
               >
                 {l.label}
               </Link>
             ))}
-            <Link href="/quote" className="block mt-2 btn-primary text-center text-xs py-2">
-              Get a Quote
-            </Link>
+            {cta?.href ? (
+              <Link
+                href={cleanHref(cta.href)}
+                className="block mt-2 btn-primary text-center text-xs py-2"
+                onClick={() => setOpen(false)}
+              >
+                {cta.label}
+              </Link>
+            ) : null}
           </div>
-        )}
+        ) : null}
       </div>
     </nav>
-  );
+  )
 }

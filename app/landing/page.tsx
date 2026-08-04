@@ -1,28 +1,24 @@
-import type { Metadata } from "next";
-import { LandingConversationSection } from "./LandingConversationSection";
-import { LandingHeroSection } from "./LandingHeroSection";
-import { LandingHowItWorksSection } from "./LandingHowItWorksSection";
-import { LandingServicesSection } from "./LandingServicesSection";
-import { LandingWhySection } from "./LandingWhySection";
+import type {Metadata} from "next"
+import {LandingPageView} from "./LandingPageView"
+import {getSeoLanding} from "@/lib/sanity/seo-landing"
 
-export const metadata: Metadata = {
-  title: "Get Your Equipment Quote | RPM Equipment Leasing — Kansas City",
-  description:
-    "Request a free quote on CASE wheel loaders and skid steers in Kansas City. Same-day response, year-round availability, and flexible rental rates.",
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+const SLUG = "landing"
 
-export default function LandingPage() {
-  return (
-    <>
-      <LandingHeroSection />
-      <LandingWhySection />
-      <LandingServicesSection />
-      <LandingHowItWorksSection />
-      <LandingConversationSection />
-    </>
-  );
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getSeoLanding(SLUG, false)
+  return {
+    title:
+      page?.seo?.title ||
+      "Get Your Equipment Quote | RPM Equipment Leasing — Kansas City",
+    description:
+      page?.seo?.description ||
+      "Request a free quote on CASE wheel loaders and skid steers in Kansas City.",
+    robots: {index: false, follow: false},
+  }
+}
+
+export default async function LandingPage() {
+  const page = await getSeoLanding(SLUG)
+  if (!page) return null
+  return <LandingPageView data={page} />
 }

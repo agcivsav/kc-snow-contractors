@@ -1,14 +1,18 @@
-import Link from "next/link";
-import type { EquipmentItem } from "@/data/equipment";
+import Link from "next/link"
+import {stegaClean} from "next-sanity"
+import type {EquipmentItem} from "@/data/equipment"
 
 type EquipmentCardProps = {
-  item: EquipmentItem;
-};
+  item: EquipmentItem
+}
 
-export function EquipmentCard({ item }: EquipmentCardProps) {
+export function EquipmentCard({item}: EquipmentCardProps) {
+  const slug = stegaClean(item.slug)
+
   return (
-    <Link href={`/inventory/${item.slug}`} className="card group block">
+    <Link href={`/inventory/${slug}`} className="card group block">
       <div className="relative h-56 overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={item.image}
           alt={item.imageAlt}
@@ -22,11 +26,18 @@ export function EquipmentCard({ item }: EquipmentCardProps) {
       </div>
       <div className="p-6">
         <h3 className="text-xl font-extrabold text-gray-900 mb-2">{item.title}</h3>
-        <p className="text-gray-600 text-sm mb-4 leading-relaxed">{item.description}</p>
+        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+          {item.description}
+        </p>
         <div className="grid grid-cols-3 gap-3 mb-5">
           {item.cardStats.map((stat) => (
-            <div key={stat.label} className="text-center bg-gray-50 rounded-lg p-2">
-              <div className="font-extrabold text-gray-900 text-sm">{stat.val}</div>
+            <div
+              key={stat.label}
+              className="text-center bg-gray-50 rounded-lg p-2"
+            >
+              <div className="font-extrabold text-gray-900 text-sm">
+                {stat.val}
+              </div>
               <div className="text-xs text-gray-500">{stat.label}</div>
             </div>
           ))}
@@ -36,5 +47,5 @@ export function EquipmentCard({ item }: EquipmentCardProps) {
         </span>
       </div>
     </Link>
-  );
+  )
 }

@@ -197,7 +197,7 @@ export const equipmentItems: EquipmentItem[] = [
     metaTitle: "Rent CASE SV280B Skid Steer Loader | Kansas City",
     metaDescription:
       "Rent the CASE SV280B Skid Steer Loader in Kansas City. Vertical lift, high-flow hydraulics, 2,800 lb rated capacity.",
-    ctaHeading: "Ready to Rent the SV280B?",
+    ctaHeading: "Ready to Rent th?",
     ctaDescription: "Daily, weekly, and monthly rates. Attachment packages available.",
   },
 ];
