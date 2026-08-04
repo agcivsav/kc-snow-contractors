@@ -2,11 +2,8 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {media} from 'sanity-plugin-media'
-import {
-  dashboardTool,
-  projectInfoWidget,
-  projectUsersWidget,
-} from '@sanity/dashboard'
+import {dashboardTool, projectInfoWidget} from '@sanity/dashboard'
+import {netlifyWidget} from 'sanity-plugin-dashboard-widget-netlify'
 import {schemaTypes} from './schemaTypes'
 import {structure} from './structure'
 import {MAIN_PAGES} from './lib/main-pages'
@@ -25,8 +22,8 @@ const mainPageTemplates = MAIN_PAGES.map((page) => ({
   },
 }))
 
-/** Navbar order: Structure → Vision → Media → Dashboard → Releases */
-const TOOL_ORDER = ['structure', 'vision', 'media', 'dashboard', 'releases']
+/** Navbar: Structure → Vision → Media → Dashboard */
+const TOOL_ORDER = ['structure', 'vision', 'media', 'dashboard']
 
 export default defineConfig({
   name: 'default',
@@ -35,12 +32,30 @@ export default defineConfig({
   projectId: 'qfubtji5',
   dataset: 'production',
 
+  // Classic draft → Publish workflow (Content Releases hides Publish for many docs)
+  releases: {
+    enabled: false,
+  },
+
   plugins: [
     structureTool({structure}),
     visionTool(),
     media(),
     dashboardTool({
-      widgets: [projectInfoWidget(), projectUsersWidget()],
+      widgets: [
+        netlifyWidget({
+          title: 'Netlify deploys',
+          sites: [
+            {
+              title: 'KC Snow Contractors',
+              name: 'kcsnow-contractors',
+              apiId: '6bda06e0-bf3e-4692-95e5-2cb7e5562844',
+              buildHookId: '6a721add3380780de226f6e0',
+            },
+          ],
+        }),
+        projectInfoWidget(),
+      ],
     }),
   ],
 
