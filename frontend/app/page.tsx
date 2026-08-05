@@ -6,6 +6,9 @@ import {withResolvedHeroLayout} from "@/lib/sanity/hero-layout"
 import {HOME_PAGE_QUERY} from "@/lib/sanity/queries"
 import {safeSanityFetch} from "@/lib/sanity/safe-fetch"
 
+// Netlify caches pages at build time; without this, Sanity edits never show until redeploy
+export const revalidate = 60
+
 export async function generateMetadata(): Promise<Metadata> {
   const {data} = await safeSanityFetch({
     query: HOME_PAGE_QUERY,

@@ -16,6 +16,9 @@ const inter = Inter({
   display: 'swap',
 });
 
+// Keep nav/footer (site settings) fresh after Sanity publishes
+export const revalidate = 60;
+
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.rpmequipmentleasing.com';
 

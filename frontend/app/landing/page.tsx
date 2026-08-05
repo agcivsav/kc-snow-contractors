@@ -2,6 +2,8 @@ import type {Metadata} from "next"
 import {LandingPageView} from "./LandingPageView"
 import {getSeoLanding} from "@/lib/sanity/seo-landing"
 
+export const revalidate = 60
+
 const SLUG = "landing"
 
 export async function generateMetadata(): Promise<Metadata> {

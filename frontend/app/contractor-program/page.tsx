@@ -1,5 +1,7 @@
 import {CmsPageView, getCmsPageMetadata} from "@/components/pages/CmsPageView"
 
+export const revalidate = 60
+
 const SLUG = "contractor-program"
 
 export async function generateMetadata() {

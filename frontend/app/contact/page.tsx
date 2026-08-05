@@ -4,6 +4,8 @@ import type {HeroBlock} from "@/components/home/home-types"
 import {withResolvedHeroLayout} from "@/lib/sanity/hero-layout"
 import {getContactPage} from "@/lib/sanity/form-pages"
 
+export const revalidate = 60
+
 const defaultHero: HeroBlock = {
   title: "Contact Us",
   description: "We're based in Kansas City. Reach out any time.",
