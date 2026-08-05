@@ -10,8 +10,6 @@ import {getEquipmentList} from "@/lib/sanity/equipment"
 import {PAGE_BY_ID_QUERY} from "@/lib/sanity/queries"
 import {safeSanityFetch} from "@/lib/sanity/safe-fetch"
 
-export const revalidate = 60
-
 const INVENTORY_PAGE_ID = "page-inventory"
 
 export async function generateMetadata(): Promise<Metadata> {

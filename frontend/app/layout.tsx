@@ -16,8 +16,9 @@ const inter = Inter({
   display: 'swap',
 });
 
-// Keep nav/footer (site settings) fresh after Sanity publishes
-export const revalidate = 60;
+// Always fetch Sanity at request time — Netlify ISR/CDN was serving stale CMS content
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.rpmequipmentleasing.com';

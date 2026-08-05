@@ -4,8 +4,6 @@ import type {HeroBlock} from "@/components/home/home-types"
 import {withResolvedHeroLayout} from "@/lib/sanity/hero-layout"
 import {getQuotePage} from "@/lib/sanity/form-pages"
 
-export const revalidate = 60
-
 const defaultHero: HeroBlock = {
   title: "Get a Quote",
   description: "Fill out the form below. We respond same day.",

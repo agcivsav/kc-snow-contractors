@@ -14,8 +14,6 @@ type PageProps = {
   params: Promise<{slug: string}>
 }
 
-export const revalidate = 60
-
 export async function generateStaticParams() {
   const {data} = await safeSanityFetch({
     query: CMS_MARKETING_SLUGS_QUERY,

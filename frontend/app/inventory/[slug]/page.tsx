@@ -7,8 +7,6 @@ import {
   getEquipmentSlugs,
 } from "@/lib/sanity/equipment"
 
-export const revalidate = 60
-
 type PageProps = {
   params: Promise<{slug: string}>
 }

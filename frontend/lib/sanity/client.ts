@@ -5,7 +5,8 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true,
+  // false = always hit Sanity API (not APICDN), so publishes show immediately
+  useCdn: false,
   stega: {
     studioUrl: process.env.NEXT_PUBLIC_SANITY_STUDIO_URL,
   },
