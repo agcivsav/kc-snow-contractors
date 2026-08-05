@@ -1,76 +1,79 @@
-import { NextResponse } from "next/server";
-import crypto from "crypto";
+import {NextResponse} from "next/server"
+import crypto from "crypto"
+
+export const dynamic = "force-dynamic"
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Idempotency-Key",
   "Access-Control-Max-Age": "86400",
-};
-
-// Handle OPTIONS request for CORS preflight
-export async function OPTIONS() {
-  return NextResponse.json({}, { headers: corsHeaders });
 }
 
-// Handle POST request
+function env(name) {
+  const value = process.env[name]?.trim()
+  return value || ""
+}
+
+export async function OPTIONS() {
+  return NextResponse.json({}, {headers: corsHeaders})
+}
+
 export async function POST(request) {
   try {
-    console.log("Form API request received");
+    const secret = env("LEAD_SECRET")
+    const laravelBase = env("LARAVEL_BASE_URL").replace(/\/$/, "")
+    const siteId = env("LEADS_SITE_ID")
 
-    const secret = process.env.LEAD_SECRET;
-    if (!secret) {
-      console.error("LEAD_SECRET is not configured");
+    if (!secret || !laravelBase || !siteId) {
+      console.error("Form API missing env:", {
+        LEAD_SECRET: Boolean(secret),
+        LARAVEL_BASE_URL: Boolean(laravelBase),
+        LEADS_SITE_ID: Boolean(siteId),
+      })
       return NextResponse.json(
-        { error: "Server configuration error" },
-        { status: 500, headers: corsHeaders },
-      );
+        {error: "Server configuration error"},
+        {status: 500, headers: corsHeaders},
+      )
     }
 
-    // Parse request body
-    let parsed = {};
+    let parsed = {}
     try {
-      parsed = await request.json();
+      parsed = await request.json()
     } catch (error) {
-      console.error("Failed to parse request body:", error);
+      console.error("Failed to parse request body:", error)
       return NextResponse.json(
-        { error: "Invalid JSON body" },
-        { status: 400, headers: corsHeaders },
-      );
+        {error: "Invalid JSON body"},
+        {status: 400, headers: corsHeaders},
+      )
     }
 
-    // Extract formId and remove it from the body
-    const formId = parsed.formId;
+    const formId = parsed.formId
     if (!formId) {
       return NextResponse.json(
-        { error: "formId is required" },
-        { status: 400, headers: corsHeaders },
-      );
+        {error: "formId is required"},
+        {status: 400, headers: corsHeaders},
+      )
     }
 
-    if (Object.prototype.hasOwnProperty.call(parsed, "formId")) {
-      delete parsed.formId;
-    }
+    delete parsed.formId
 
-    const sanitizedBody = JSON.stringify(parsed);
-    const ts = Math.floor(Date.now() / 1000).toString();
-
-    // Create HMAC signature
+    const sanitizedBody = JSON.stringify(parsed)
+    const ts = Math.floor(Date.now() / 1000).toString()
     const sig = crypto
       .createHmac("sha256", secret)
       .update(`${ts}.${sanitizedBody}`)
-      .digest("hex");
+      .digest("hex")
 
-    // Get idempotency key from headers
-    const idem = request.headers.get("idempotency-key") || "";
+    const idem = request.headers.get("idempotency-key") || ""
+    const clientIp =
+      request.headers.get("x-nf-client-connection-ip") ??
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+      request.headers.get("x-real-ip") ??
+      ""
 
-    console.log("Sanitized body:", sanitizedBody);
-    console.log("Form ID:", formId);
+    const laravelUrl = `${laravelBase}/api/site/${siteId}/form/${formId}/submit`
 
-    const laravelUrl = `${process.env.LARAVEL_BASE_URL}/api/site/${process.env.LEADS_SITE_ID}/form/${formId}/submit`;
-    console.log("Laravel URL:", laravelUrl);
-
-    // Forward request to Laravel backend
     const resp = await fetch(laravelUrl, {
       method: "POST",
       headers: {
@@ -80,32 +83,30 @@ export async function POST(request) {
         "X-Signature": sig,
         "X-Partner": "nextjs",
         "Idempotency-Key": idem,
+        ...(clientIp
+          ? {"X-Forwarded-For": clientIp, "X-Real-IP": clientIp}
+          : {}),
       },
       body: sanitizedBody,
-    });
+    })
 
-    const text = await resp.text();
-
-    console.log(idem, resp);
-    // Try to parse as JSON, otherwise return as text
-    let responseData;
+    const text = await resp.text()
+    let responseData
     try {
-      responseData = JSON.parse(text);
+      responseData = JSON.parse(text)
     } catch {
-      responseData = text;
+      responseData = text
     }
-
-    console.log(responseData);
 
     return NextResponse.json(responseData, {
       status: resp.status,
       headers: corsHeaders,
-    });
+    })
   } catch (error) {
-    console.error("Form API error:", error);
+    console.error("Form API error:", error)
     return NextResponse.json(
-      { error: "Upstream request failed" },
-      { status: 500, headers: corsHeaders },
-    );
+      {error: "Upstream request failed"},
+      {status: 500, headers: corsHeaders},
+    )
   }
 }

@@ -1,10 +1,8 @@
 "use client";
 
-import {
-  DEFAULT_HONEYPOT_FIELD_NAME,
-  useFormSubmission,
-} from "@/hooks/useFormSubmission";
-import { QuoteFormFields } from "./QuoteFormFields";
+import {useFormSubmission} from "@/hooks/useFormSubmission";
+import {HoneypotField} from "@/components/ui/HoneypotField";
+import {QuoteFormFields} from "./QuoteFormFields";
 
 const inputClass =
   "w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400";
@@ -34,10 +32,10 @@ export function QuoteRequestForm({ onSuccess }: QuoteRequestFormProps) {
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
       <form
         onSubmit={handleSubmit(submitCompletedForm)}
-        className="space-y-5"
+        className="relative space-y-5"
         noValidate
       >
-        <input type="hidden" {...register(DEFAULT_HONEYPOT_FIELD_NAME)} />
+        <HoneypotField register={register} />
         <QuoteFormFields
           register={register}
           registerWithTracking={registerWithTracking}

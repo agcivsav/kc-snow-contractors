@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import {
-  DEFAULT_HONEYPOT_FIELD_NAME,
-  useFormSubmission,
-} from "@/hooks/useFormSubmission";
-import { FormSuccessMessage } from "./FormSuccessMessage";
-import { errClass, errMsg, inputClass } from "./landing-form-shared";
+import {useState} from "react";
+import {useFormSubmission} from "@/hooks/useFormSubmission";
+import {HoneypotField} from "@/components/ui/HoneypotField";
+import {FormSuccessMessage} from "./FormSuccessMessage";
+import {errClass, errMsg, inputClass} from "./landing-form-shared";
 
 type LandingFormProps = {
   idPrefix?: string;
@@ -41,8 +39,8 @@ export function LandingForm({ idPrefix = "landing" }: LandingFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit(submitCompletedForm)} className="space-y-4" noValidate>
-      <input type="hidden" {...register(DEFAULT_HONEYPOT_FIELD_NAME)} />
+    <form onSubmit={handleSubmit(submitCompletedForm)} className="relative space-y-4" noValidate>
+      <HoneypotField register={register} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label
