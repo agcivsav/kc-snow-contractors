@@ -100,6 +100,9 @@ export const useFormSubmission = (config) => {
         for (let i = 0; i < form.elements.length; i += 1) {
           const el = form.elements[i];
           if (!el.name) continue;
+          // Never sync honeypot from DOM — password managers autofill hidden
+          // inputs and that was silently blocking real submissions.
+          if (honeypotField && el.name === honeypotField) continue;
           if (el.type === "submit" || el.type === "button") continue;
           if (el.type === "checkbox" || el.type === "radio") continue;
           if (el.type === "file") continue;
@@ -116,9 +119,16 @@ export const useFormSubmission = (config) => {
           }
         }
       }
+      // Keep honeypot empty in RHF so autofill cannot trip the bot check
+      if (honeypotField) {
+        setValue(honeypotField, "", {
+          shouldValidate: false,
+          shouldDirty: false,
+        });
+      }
       return rhfHandleSubmit(onValid)(e);
     },
-    [rhfHandleSubmit, setValue],
+    [rhfHandleSubmit, setValue, honeypotField],
   );
 
   // Debug logging (in-memory always; console only in dev — avoids "DEBUG:" noise in prod)
@@ -179,7 +189,8 @@ export const useFormSubmission = (config) => {
 
       logDebug(`Sending abandoned form data: ${JSON.stringify(abandonData)}`);
 
-      fetch("/api/forms-api", {
+      // Trailing slash required — next.config has trailingSlash: true
+      fetch("/api/forms-api/", {
         method: "POST",
         body: JSON.stringify(abandonData),
         headers: {
@@ -366,9 +377,12 @@ export const useFormSubmission = (config) => {
     async (data) => {
       if (honeypotField) {
         const raw = data[honeypotField];
-        console.log(raw);
         if (raw != null && String(raw).trim() !== "") {
-          logDebug("Honeypot filled — submission blocked (likely bot)");
+          // Bot filled the trap — pretend success so scrapers learn nothing
+          logDebug("Honeypot filled — fake success (likely bot)");
+          onSuccess?.();
+          toast.success(successMessage);
+          reset();
           return;
         }
       }
@@ -454,7 +468,8 @@ export const useFormSubmission = (config) => {
       );
 
       try {
-        const response = await fetch("/api/forms-api", {
+        // Trailing slash required — next.config has trailingSlash: true
+        const response = await fetch("/api/forms-api/", {
           method: "POST",
           body: JSON.stringify(formData),
           headers: {

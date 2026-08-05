@@ -1,9 +1,7 @@
 "use client"
 
-import {
-  DEFAULT_HONEYPOT_FIELD_NAME,
-  useFormSubmission,
-} from "@/hooks/useFormSubmission"
+import {useFormSubmission} from "@/hooks/useFormSubmission"
+import {HoneypotField} from "@/components/ui/HoneypotField"
 import type {ContactFormCopy} from "@/lib/sanity/form-page-types"
 
 const inputClass =
@@ -35,10 +33,10 @@ export function ContactForm({copy, onSuccess}: ContactFormProps) {
   return (
     <form
       onSubmit={handleSubmit(submitCompletedForm)}
-      className="space-y-4"
+      className="relative space-y-4"
       noValidate
     >
-      <input type="hidden" {...register(DEFAULT_HONEYPOT_FIELD_NAME)} />
+      <HoneypotField register={register} />
       <div>
         <label
           htmlFor="contact-name"
