@@ -14,6 +14,7 @@ type NavbarProps = {
   settings?: SiteSettingsData | null
 }
 
+
 function cleanHref(href?: string) {
   return href ? stegaClean(href) : ""
 }
