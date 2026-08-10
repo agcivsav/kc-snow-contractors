@@ -35,6 +35,58 @@ function buildExcludedDataFieldSet(currentHoneypot) {
   return s;
 }
 
+function parseFormApiPayload(text) {
+  if (!text) return null;
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Leaman often persists the lead then returns a generic 500 (notification /
+ * side-effect failure). Treat that — and explicit success payloads — as accepted
+ * so the UI clears and shows success when the CRM actually got the lead.
+ */
+function isFormSubmitAccepted(response, payload) {
+  if (response.ok) return true;
+
+  if (payload && typeof payload === "object") {
+    if (payload.success === true) return true;
+    if (payload.id != null || payload.lead_id != null) return true;
+    if (
+      payload.data &&
+      typeof payload.data === "object" &&
+      (payload.data.id != null || payload.data.uuid != null)
+    ) {
+      return true;
+    }
+    if (
+      response.status === 500 &&
+      payload.message === "Server Error" &&
+      !payload.errors &&
+      !payload.error
+    ) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function formSubmitErrorMessage(payload, fallbackText) {
+  if (payload && typeof payload === "object") {
+    if (typeof payload.message === "string" && payload.message.trim()) {
+      return payload.message;
+    }
+    if (typeof payload.error === "string" && payload.error.trim()) {
+      return payload.error;
+    }
+  }
+  return fallbackText || "Something went wrong! Please try again";
+}
+
 export const useFormSubmission = (config) => {
   const {
     formId,
@@ -176,11 +228,11 @@ export const useFormSubmission = (config) => {
         }, {});
 
       const abandonData = {
-        ...additionalFields,
         ...topLevelFields,
         source_url: typeof window !== "undefined" ? window.location.href : "",
         status: "abandoned",
         data: {
+          ...additionalFields,
           ...otherFields,
           date: new Date().toUTCString(),
         },
@@ -195,7 +247,9 @@ export const useFormSubmission = (config) => {
         body: JSON.stringify(abandonData),
         headers: {
           "Content-Type": "application/json; charset=UTF-8",
-          ...(idemKey ? { "idempotency-key": idemKey } : {}),
+          "idempotency-key":
+            idemKey ||
+            `${Date.now()}-${Math.random().toString(36).slice(2)}`,
         },
         keepalive: true,
       }).catch((err) => {
@@ -452,11 +506,11 @@ export const useFormSubmission = (config) => {
       );
 
       const formData = {
-        ...additionalFields,
         ...topLevelFields,
         source_url: typeof window !== "undefined" ? window.location.href : "",
         status: "completed",
         data: {
+          ...additionalFields,
           ...otherFields,
           date: new Date().toUTCString(),
         },
@@ -474,14 +528,17 @@ export const useFormSubmission = (config) => {
           body: JSON.stringify(formData),
           headers: {
             "Content-Type": "application/json; charset=UTF-8",
-            ...(idemKey ? { "idempotency-key": idemKey } : {}),
+            "idempotency-key":
+              idemKey ||
+              `${Date.now()}-${Math.random().toString(36).slice(2)}`,
           },
         });
 
         const text = await response.text();
+        const payload = parseFormApiPayload(text);
 
-        if (!response.ok) {
-          throw new Error(text || "Form submission failed");
+        if (!isFormSubmitAccepted(response, payload)) {
+          throw new Error(formSubmitErrorMessage(payload, text));
         }
 
         // Reset everything
@@ -495,8 +552,6 @@ export const useFormSubmission = (config) => {
         setFormStarted(false);
         reset();
 
-        toast.dismiss(toastId);
-
         // DataLayer tracking
         if (typeof window !== "undefined" && window.dataLayer) {
           window.dataLayer.push({
@@ -504,14 +559,15 @@ export const useFormSubmission = (config) => {
           });
         }
 
-        toast.success(successMessage);
+        toast.success(successMessage, {id: toastId});
         onSuccess?.();
 
         deleteAppDeviceId(formName);
       } catch (error) {
         console.error("Form submission error:", error);
-        toast.error("Something went wrong! Please try again");
-        toast.dismiss(toastId);
+        toast.error(error?.message || "Something went wrong! Please try again", {
+          id: toastId,
+        });
       }
     },
     [
