@@ -507,7 +507,6 @@ export const useFormSubmission = (config) => {
         toast.success(successMessage);
         onSuccess?.();
 
-        // Delete idempotency key on successful completed submission
         deleteAppDeviceId(formName);
       } catch (error) {
         console.error("Form submission error:", error);
