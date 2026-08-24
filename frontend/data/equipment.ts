@@ -100,10 +100,9 @@ export const equipmentItems: EquipmentItem[] = [
     image: "/images/case-sv280b-skid-steer.jpg",
     imageAlt: "CASE 521G Wheel Loader",
     gallery: [
-      { src: "/images/521G.png", alt: "High-volume snow management" },
-            { src: "/images/521g.jpg", alt: "CASE 521G on construction site" },
-
-      { src: "/images/case521G.png", alt: "Job site operations" },
+      {src: "/images/521g-snow.jpg", alt: "High-volume snow management"},
+      {src: "/images/521g.jpg", alt: "CASE 521G on construction site"},
+      {src: "/images/case521g.jpg", alt: "Job site operations"},
     ],
     cardStats: [
       { val: "121 HP", label: "Horsepower" },
