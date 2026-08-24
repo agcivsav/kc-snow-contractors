@@ -3,13 +3,14 @@ import { Inter } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 import './globals.css';
 import { SiteShell } from '@/components/SiteShell';
-import { SanityLive } from '@/lib/sanity/live';
-import { SITE_SETTINGS_QUERY } from '@/lib/sanity/queries';
-import { safeSanityFetch } from '@/lib/sanity/safe-fetch';
 import {
   defaultSiteSettings,
   type SiteSettingsData,
 } from '@/components/site/site-settings-defaults';
+import { SanityLive } from '@/lib/sanity/live';
+import { SITE_SETTINGS_QUERY } from '@/lib/sanity/queries';
+import { safeSanityFetch } from '@/lib/sanity/safe-fetch';
+import { SITE_URL } from '@/lib/site-url';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,11 +21,8 @@ const inter = Inter({
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.rpmequipmentleasing.com';
-
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'RPM Equipment Leasing | Heavy Equipment Rental – Kansas City',
     template: '%s | RPM Equipment Leasing',
