@@ -27,6 +27,7 @@ export function EquipmentGallery({images}: EquipmentGalleryProps) {
           alt={active.alt}
           fill
           priority={activeIndex === 0}
+          quality={70}
           sizes="(max-width: 1024px) 100vw, 640px"
           className="object-cover"
         />
@@ -56,6 +57,7 @@ export function EquipmentGallery({images}: EquipmentGalleryProps) {
                 src={image.src}
                 alt=""
                 fill
+                quality={70}
                 sizes="96px"
                 className="object-cover"
                 aria-hidden
