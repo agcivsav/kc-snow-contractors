@@ -1,7 +1,5 @@
 import type { MetadataRoute } from 'next';
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.rpmequipmentleasing.com';
+import { SITE_URL } from '@/lib/site-url';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -12,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: `${BASE_URL}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

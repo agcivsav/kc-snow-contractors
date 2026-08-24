@@ -2,9 +2,7 @@ import type {MetadataRoute} from "next"
 import {getEquipmentSlugs} from "@/lib/sanity/equipment"
 import {CMS_MARKETING_SLUGS_QUERY} from "@/lib/sanity/queries"
 import {safeSanityFetch} from "@/lib/sanity/safe-fetch"
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rpmsnowkc.com"
+import {SITE_URL} from "@/lib/site-url"
 
 const STATIC_ROUTES = [
   {path: "/", priority: 1.0, changeFrequency: "weekly" as const},
@@ -52,7 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = [...STATIC_ROUTES, ...inventoryItems, ...fromCms]
 
   return routes.map(({path, priority, changeFrequency}) => ({
-    url: `${BASE_URL}${path}`,
+    url: `${SITE_URL}${path}`,
     lastModified: new Date(),
     changeFrequency,
     priority,
